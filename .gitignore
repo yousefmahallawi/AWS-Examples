@@ -1,0 +1,17 @@
+# AWS credentials
+.aws/
+credentials
+
+# Environment files
+.env
+
+# Private keys
+*.pem
+*.key
+
+# VS Code settings
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
