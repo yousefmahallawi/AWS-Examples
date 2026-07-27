@@ -1,37 +1,44 @@
-# AWS-Examples
+# Repository Structure
 
-A collection of hands-on AWS examples, AWS CLI commands, CloudFormation templates, and study notes created while preparing for the AWS Certified Solutions Architect – Associate (SAA-C03) certification.
+## 00 - Setup
 
-## Purpose
+- AWS Account
+- IAM Administrator User
+- AWS CLI Configuration
+- Budgets
+- MFA
 
-This repository documents my hands-on practice while studying AWS. It includes examples, notes, and documentation for the AWS services covered throughout my certification journey.
+## 01 - Amazon S3
 
-## Repository Structure
+- S3 Buckets
+- Object Management
+- AWS CLI (`aws s3` and `aws s3api`)
+- JMESPath Queries
+- Bash Automation
+- AWS SDK
+- CloudFormation Basics
 
-## Course Progress
+## 02 - AWS API
 
-This repository follows the same order as the AWS Certified Solutions Architect – Associate (SAA-C03) course I'm studying. Each section is added as I complete it.
+- AWS APIs
+- Authentication
+- CLI vs SDK vs Console
+- API Requests
 
-- ✅ 00-Setup
-- 🔄 01-Amazon-S3
-- ⬜ 02-AWS-API
-- ⬜ 03-VPC
-- ⬜ 04-IAM
-- ⬜ 05-EC2
-- ⬜ 06-AMIs
-- ⬜ 07-Auto Scaling Groups (ASG)
-- ⬜ 08-Elastic Load Balancer (ELB)
-- ⬜ 09-Route 53
-- ⬜ 10-AWS Global Accelerator
-- ⬜ 11-CloudFront
-- ⬜ 12-EBS
-- ⬜ 13-EFS
-- ⬜ 14-FSx
-- ⬜ 15-AWS Backup
-- ⬜ 16-AWS Snow Family
-- ⬜ 17-AWS Transfer Family
-- ⬜ 18-AWS Migration Hub
-- ⬜ 19-AWS DataSync
-- ⬜ 20-AWS Database Migration Service (DMS)
+## 03 - VPC
 
-...and I'll continue updating it as I progress through the course.
+- VPC Architecture
+- Public & Private Subnets
+- Route Tables
+- Internet Gateway
+- NAT Gateway
+
+## 04 - IAM
+
+- Users
+- Groups
+- Roles
+- Policies
+- Permissions
+
+...
