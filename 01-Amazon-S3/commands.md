@@ -203,3 +203,17 @@ aws s3api delete-objects \
     --bucket my-example-bucket-ab2 \
     --delete file:///tmp/delete_objects.json
 ```
+## Deploy a CloudFormation stack
+
+```bash
+aws cloudformation deploy \
+    --template-file template.yaml \
+    --stack-name cfn-s3-simple
+```
+
+## Delete a CloudFormation stack
+
+```bash
+aws cloudformation delete-stack \
+    --stack-name cfn-s3-simple
+```

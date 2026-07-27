@@ -16,6 +16,8 @@ This folder documents my hands-on practice while learning Amazon S3 for the AWS 
 - Uploading and downloading objects with scripts
 - Synchronizing local directories with S3
 - Bulk object deletion
+- AWS SDK for Ruby
+- Infrastructure as Code (CloudFormation)
 ## Status
 
 🟡 In Progress

@@ -87,3 +87,23 @@
 - `aws s3 sync` uploads only changed files, making it efficient for synchronizing directories.
 - `delete-objects` removes multiple objects in one request instead of deleting them individually.
 - Scripts become more useful as they include validation, automation, and reusable logic.
+---
+
+## Session 5
+
+### Hands-on Practice
+
+- Explored the AWS SDK for Ruby.
+- Learned how applications interact with Amazon S3 programmatically.
+- Created an S3 client.
+- Used environment variables to configure AWS resources.
+- Generated random files and uploaded them to an S3 bucket.
+- Introduced Infrastructure as Code (IaC) using AWS CloudFormation.
+- Learned how to deploy and delete CloudFormation stacks from the AWS CLI.
+
+### Key Takeaways
+
+- The AWS SDK allows applications to communicate with AWS services directly from code.
+- Environment variables make applications easier to configure without changing source code.
+- CloudFormation treats infrastructure as code, making deployments repeatable and version-controlled.
+- Infrastructure can be deployed, updated, and deleted using CloudFormation stacks instead of manual console operations.
