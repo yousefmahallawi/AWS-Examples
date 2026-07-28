@@ -1,83 +1,213 @@
 # AWS SAA-C03 Study Log
 
-This file tracks my learning progress while preparing for the AWS Certified Solutions Architect – Associate (SAA-C03) certification.
+This document records my hands-on progress while preparing for the AWS Certified Solutions Architect – Associate (SAA-C03) certification. Each entry summarizes the concepts I studied, the practical work I completed, and the improvements made to this repository.
 
 ---
 
-## 2026-07-24
+## 2026-07-24 | Session 1
 
 ### AWS Environment Setup
 
-Completed:
+#### Objectives
 
-- Created AWS account
-- Enabled MFA
-- Configured AWS CLI
-- Created IAM administrator user
-- Created Zero Spend Budget
+- Prepare a secure AWS environment for hands-on practice.
+- Configure the tools required for the course.
+- Establish cost controls before creating AWS resources.
 
-Repository updates:
+#### Topics Covered
 
-- Initialized repository
-- Added 00-Setup
-- Added study log
-- Added .gitignore
+- AWS account setup
+- Root user security
+- Multi-Factor Authentication (MFA)
+- IAM administrator user
+- AWS CLI installation and configuration
+- AWS Budgets
 
----
+#### Commands Practiced
 
-## 2026-07-27
+```bash
+aws configure
+aws sts get-caller-identity
+```
 
-### Amazon S3 — Part 1
+#### Key Takeaways
 
-Completed:
+- The AWS root user should only be used for account-level administrative tasks.
+- IAM users provide a safer way to perform everyday AWS operations.
+- AWS CLI enables direct interaction with AWS services from the command line.
+- Cost monitoring should be configured before provisioning cloud resources.
 
-- Created and deleted S3 buckets
-- Uploaded and downloaded objects
-- Learned the difference between `aws s3` and `aws s3api`
-- Practiced JMESPath queries
-- Explored JSON, Table, and YAML output formats
+#### Repository Updates
 
-Repository updates:
-
-- Added `01-Amazon-S3`
-- Added `commands.md`
-- Added `learning-log.md`
-
----
-
-## 2026-07-27
-
-### Amazon S3 — Part 2
-
-Completed:
-
-- Built Bash scripts
-- Automated bucket creation
-- Automated object uploads
-- Automated synchronization
-- Automated object deletion
-
-Repository updates:
-
-- Added reusable Bash scripts
-- Documented script usage
+- Initialized the repository.
+- Added the `00-Setup` section.
+- Created the project documentation.
+- Configured `.gitignore`.
+- Started documenting my AWS learning journey.
 
 ---
 
-## 2026-07-28
+## 2026-07-25 | Session 2
 
-### Amazon S3 — Part 3
+### Amazon S3 Fundamentals
 
-Completed:
+#### Objectives
 
-- Learned the AWS SDK for Ruby
-- Explored CloudFormation
-- Created S3 examples using Terraform
-- Created S3 examples using AWS CDK
-- Created S3 examples using Pulumi
+- Understand the core concepts of Amazon S3.
+- Learn how to manage buckets and objects.
+- Compare management through the AWS Console and AWS CLI.
 
-Repository updates:
+#### Topics Covered
 
-- Added SDK examples
-- Added Infrastructure as Code examples
-- Added CloudFormation examples
+- Bucket creation and configuration
+- Object uploads and downloads
+- Object versioning
+- Server-side encryption
+- Object metadata
+- Object tags
+- Object Lock
+- S3 storage classes
+- Prefixes and object keys
+- AWS CloudShell
+- High-level `aws s3` commands
+- Low-level `aws s3api` commands
+
+#### Commands Practiced
+
+```bash
+aws s3 ls
+aws s3 cp
+aws s3 mv
+aws s3 rm
+aws s3 sync
+aws s3 mb
+aws s3 rb
+
+aws s3api create-bucket
+aws s3api list-buckets
+aws s3api put-object
+aws s3api get-object
+aws s3api copy-object
+```
+
+#### Key Takeaways
+
+- Amazon S3 is an object storage service rather than a traditional file system.
+- Buckets contain objects that are uniquely identified by object keys.
+- The folders displayed in the AWS Console are prefixes rather than physical directories.
+- The `aws s3` commands simplify common storage operations, while `aws s3api` exposes the complete Amazon S3 API for advanced management tasks.
+- AWS CloudShell provides a preconfigured Linux environment with the AWS CLI ready to use.
+
+#### Repository Updates
+
+- Created the `01-Amazon-S3` section.
+- Added Amazon S3 documentation.
+- Recorded AWS CLI examples.
+- Added command references and learning notes.
+
+---
+
+## 2026-07-26 | Session 3
+
+### Amazon S3 Automation
+
+#### Objectives
+
+- Automate repetitive Amazon S3 operations.
+- Build reusable Bash scripts for common AWS CLI tasks.
+- Become familiar with Linux utilities used in AWS CloudShell.
+
+#### Topics Covered
+
+- Bash scripting
+- Shebangs
+- Script permissions
+- Input validation
+- Bucket automation
+- Object management
+- Recursive synchronization
+- JMESPath queries
+- JSON processing with `jq`
+- Linux utilities (`tree`, `dd`, `chmod`, `set -e`)
+
+#### Commands Practiced
+
+```bash
+aws s3api list-objects
+aws s3api list-objects-v2
+chmod
+jq
+tree
+```
+
+#### Key Takeaways
+
+- Bash scripts make AWS CLI operations repeatable and easier to maintain.
+- User input should always be validated before executing AWS commands.
+- JMESPath queries simplify filtering AWS CLI responses.
+- `jq` provides powerful processing of JSON output.
+- Buckets created outside `us-east-1` require a `LocationConstraint` when using the S3 API.
+
+#### Repository Updates
+
+- Added reusable Bash scripts.
+- Expanded Amazon S3 documentation.
+- Documented Linux utilities used throughout the exercises.
+- Added advanced AWS CLI examples.
+
+---
+
+## 2026-07-27 | Session 4
+
+### Amazon S3 Development and Infrastructure as Code
+
+#### Objectives
+
+- Explore programmatic interaction with Amazon S3.
+- Learn different approaches to Infrastructure as Code (IaC).
+- Compare native AWS tools with third-party solutions.
+
+#### Topics Covered
+
+- AWS SDK for Ruby
+- AWS Tools for PowerShell
+- AWS CloudFormation
+- Terraform
+- AWS CDK
+- Pulumi
+
+#### Commands Practiced
+
+```bash
+aws cloudformation deploy
+aws cloudformation delete-stack
+
+terraform init
+terraform apply
+terraform destroy
+
+cdk bootstrap
+cdk synth
+cdk deploy
+
+pulumi up
+```
+
+#### Key Takeaways
+
+- SDKs allow applications to communicate directly with AWS services through code.
+- CloudFormation is AWS's native Infrastructure as Code service.
+- Terraform provides a cloud-agnostic approach to infrastructure provisioning.
+- AWS CDK generates CloudFormation templates using programming languages.
+- Pulumi enables infrastructure provisioning with general-purpose programming languages.
+- Different Infrastructure as Code tools can provision the same AWS resources while using different workflows and syntaxes.
+
+#### Repository Updates
+
+- Added SDK examples.
+- Added CloudFormation examples.
+- Added Infrastructure as Code examples.
+- Expanded Amazon S3 documentation with Terraform, AWS CDK, and Pulumi.
+- Continued organizing the repository with practical examples and supporting documentation.
+
+---
