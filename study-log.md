@@ -1,6 +1,6 @@
 # AWS SAA-C03 Study Log
 
-This file tracks my progress while studying for the AWS Certified Solutions Architect – Associate (SAA-C03) certification.
+This file tracks my learning progress while preparing for the AWS Certified Solutions Architect – Associate (SAA-C03) certification.
 
 ---
 
@@ -8,61 +8,76 @@ This file tracks my progress while studying for the AWS Certified Solutions Arch
 
 ### AWS Environment Setup
 
-Completed my initial AWS environment setup.
+Completed:
 
-#### Completed
-
-- Created an AWS account
-- Enabled MFA for the root user
-- Created a Zero Spend Budget
-- Created an IAM administrator user
-- Created AWS CLI access keys
-- Installed AWS CLI
+- Created AWS account
+- Enabled MFA
 - Configured AWS CLI
-- Verified authentication using `aws sts get-caller-identity`
+- Created IAM administrator user
+- Created Zero Spend Budget
 
-#### Notes
+Repository updates:
 
-Started building this repository to document my hands-on AWS learning journey.
+- Initialized repository
+- Added 00-Setup
+- Added study log
+- Added .gitignore
 
 ---
 
 ## 2026-07-27
 
-### Amazon S3
+### Amazon S3 — Part 1
 
-Completed the first section of Amazon S3.
+Completed:
 
-#### Topics Covered
+- Created and deleted S3 buckets
+- Uploaded and downloaded objects
+- Learned the difference between `aws s3` and `aws s3api`
+- Practiced JMESPath queries
+- Explored JSON, Table, and YAML output formats
 
-- Creating and deleting S3 buckets
-- Uploading and downloading objects
-- Recursive object deletion
-- `aws s3` vs `aws s3api`
-- Querying JSON responses
-- AWS CLI output formats (JSON, Table, YAML)
-- Bash scripting for AWS CLI automation
-- Object synchronization with `aws s3 sync`
-- Uploading objects programmatically using the AWS SDK for Ruby
-- Introduction to Infrastructure as Code (CloudFormation)
+Repository updates:
 
-#### Hands-on Practice
+- Added `01-Amazon-S3`
+- Added `commands.md`
+- Added `learning-log.md`
 
-- Created and deleted multiple S3 buckets
-- Uploaded and downloaded files using the AWS CLI
-- Built reusable Bash scripts for common S3 tasks
-- Used `jq` to process JSON output
-- Learned how CloudFormation deploys AWS infrastructure
-- Explored how applications interact with AWS using the SDK
+---
 
-#### Repository Updates
+## 2026-07-27
 
-- Added the `01-Amazon-S3` section
-- Documented CLI commands
-- Added learning notes
-- Created reusable Bash automation scripts
-- Added SDK and CloudFormation examples
+### Amazon S3 — Part 2
 
-#### Status
+Completed:
 
-✅ Amazon S3 section completed.
+- Built Bash scripts
+- Automated bucket creation
+- Automated object uploads
+- Automated synchronization
+- Automated object deletion
+
+Repository updates:
+
+- Added reusable Bash scripts
+- Documented script usage
+
+---
+
+## 2026-07-28
+
+### Amazon S3 — Part 3
+
+Completed:
+
+- Learned the AWS SDK for Ruby
+- Explored CloudFormation
+- Created S3 examples using Terraform
+- Created S3 examples using AWS CDK
+- Created S3 examples using Pulumi
+
+Repository updates:
+
+- Added SDK examples
+- Added Infrastructure as Code examples
+- Added CloudFormation examples

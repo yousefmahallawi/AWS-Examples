@@ -18,6 +18,7 @@ This folder documents my hands-on practice while learning Amazon S3 for the AWS 
 - Bulk object deletion
 - AWS SDK for Ruby
 - Infrastructure as Code (CloudFormation)
+- Infrastructure as Code using Terraform, AWS CDK, and Pulumi
 ## Status
 
 🟡 In Progress

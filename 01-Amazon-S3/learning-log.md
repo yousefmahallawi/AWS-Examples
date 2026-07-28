@@ -107,3 +107,24 @@
 - Environment variables make applications easier to configure without changing source code.
 - CloudFormation treats infrastructure as code, making deployments repeatable and version-controlled.
 - Infrastructure can be deployed, updated, and deleted using CloudFormation stacks instead of manual console operations.
+---
+
+## Session 6
+
+### Infrastructure as Code
+
+#### Hands-on Practice
+
+- Explored multiple Infrastructure as Code (IaC) tools.
+- Created an Amazon S3 bucket using Terraform.
+- Created an Amazon S3 bucket using AWS CDK with TypeScript.
+- Created an Amazon S3 bucket using Pulumi with Python.
+- Compared different approaches to defining cloud infrastructure as code.
+
+#### Key Takeaways
+
+- CloudFormation is AWS's native Infrastructure as Code service.
+- Terraform is cloud-agnostic and can manage resources across multiple cloud providers.
+- AWS CDK allows infrastructure to be defined using programming languages such as TypeScript, Python, and C#.
+- Pulumi also uses general-purpose programming languages to define cloud infrastructure.
+- Although the syntax differs, all four tools can provision the same AWS resources.
