@@ -211,3 +211,39 @@ pulumi up
 - Continued organizing the repository with practical examples and supporting documentation.
 
 ---
+## 2026-07-28 | Session 5
+
+### Amazon S3 — Checksums and Object Integrity
+
+#### Objectives
+
+- Understand how Amazon S3 validates uploaded objects.
+- Learn how Terraform detects changes to managed objects.
+
+#### Topics Covered
+
+- MD5 checksums
+- CRC32
+- ETags
+- Object metadata
+- Terraform object updates
+
+#### Commands Practiced
+
+```bash
+md5sum
+aws s3api head-object
+aws s3api put-object --checksum-algorithm CRC32
+```
+
+#### Key Takeaways
+
+- Checksums verify that uploaded data has not been corrupted.
+- ETags are commonly used to identify object content and detect changes.
+- Terraform can use object hashes to determine when an S3 object should be updated.
+
+#### Repository Updates
+
+- Added checksum examples.
+- Documented ETag behavior.
+- Added Terraform object examples.

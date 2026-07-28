@@ -128,3 +128,25 @@
 - AWS CDK allows infrastructure to be defined using programming languages such as TypeScript, Python, and C#.
 - Pulumi also uses general-purpose programming languages to define cloud infrastructure.
 - Although the syntax differs, all four tools can provision the same AWS resources.
+---
+
+## Session 5 – Checksums and Object Integrity
+
+### Objectives
+
+Understand how Amazon S3 verifies uploaded objects and how Terraform detects object changes.
+
+### Topics Covered
+
+- MD5 checksums
+- CRC32 checksums
+- ETags
+- Object metadata
+- Terraform object updates
+
+### Key Takeaways
+
+- An ETag is commonly used to identify a specific version of an uploaded object.
+- Checksums help verify data integrity after upload.
+- `head-object` returns object metadata, including checksum-related information.
+- Terraform compares object state to determine whether resources need to be updated.
