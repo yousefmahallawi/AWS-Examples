@@ -6,47 +6,36 @@ This document records my hands-on progress while preparing for the AWS Certified
 
 ## 2026-07-24 | Session 1
 
-### AWS Environment Setup
+# AWS Environment Setup
 
-#### Objectives
+Before creating any AWS resources, I focused on preparing a secure environment for the rest of the course. Rather than jumping directly into services such as Amazon S3 or EC2, the first step was configuring my AWS account correctly and making sure cost controls were in place.
 
-- Prepare a secure AWS environment for hands-on practice.
-- Configure the tools required for the course.
-- Establish cost controls before creating AWS resources.
+During this session I enabled Multi-Factor Authentication (MFA) for the root account, created a dedicated IAM administrator user for daily work, configured the AWS CLI on my local machine, and created a Zero Spend Budget to avoid unexpected charges while working through the labs.
 
-#### Topics Covered
-
-- AWS account setup
-- Root user security
-- Multi-Factor Authentication (MFA)
-- IAM administrator user
-- AWS CLI installation and configuration
-- AWS Budgets
-
-#### Commands Practiced
+The AWS CLI was then configured and tested to verify that authentication was working correctly.
 
 ```bash
 aws configure
 aws sts get-caller-identity
 ```
 
-#### Key Takeaways
+---
 
-- The AWS root user should only be used for account-level administrative tasks.
-- IAM users provide a safer way to perform everyday AWS operations.
-- AWS CLI enables direct interaction with AWS services from the command line.
-- Cost monitoring should be configured before provisioning cloud resources.
+### What I Learned
 
-#### Repository Updates
+The root account should only be used for administrative tasks that require root privileges. For everyday work, an IAM user with the appropriate permissions is the recommended approach.
 
-- Initialized the repository.
-- Added the `00-Setup` section.
-- Created the project documentation.
-- Configured `.gitignore`.
-- Started documenting my AWS learning journey.
+Configuring the AWS CLI makes it possible to manage AWS resources directly from the terminal, which becomes the primary tool throughout this course.
+
+Creating a budget before provisioning resources provides an additional layer of protection against accidental AWS charges.
 
 ---
 
+### Repository Update
+
+Initialized the repository and created the project structure.
+
+Added the `00-Setup` section together with the first documentation files, including the study log and project notes, to begin tracking my progress throughout the certification.
 ## 2026-07-25 | Session 2
 
 ### Amazon S3 Fundamentals
