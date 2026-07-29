@@ -1,41 +1,52 @@
 # AWS SAA-C03 Study Log
 
-This document records my hands-on progress while preparing for the AWS Certified Solutions Architect – Associate (SAA-C03) certification. Each entry summarizes the concepts I studied, the practical work I completed, and the improvements made to this repository.
+This document records my hands-on progress while preparing for the AWS Certified Solutions Architect – Associate (SAA-C03) certification. Each session summarizes the topics I studied, the practical exercises I completed, and the updates made to this repository.
 
 ---
 
 ## 2026-07-24 | Session 1
 
-# AWS Environment Setup
+### AWS Environment Setup
 
-Before creating any AWS resources, I focused on preparing a secure environment for the rest of the course. Rather than jumping directly into services such as Amazon S3 or EC2, the first step was configuring my AWS account correctly and making sure cost controls were in place.
+#### Objectives
 
-During this session I enabled Multi-Factor Authentication (MFA) for the root account, created a dedicated IAM administrator user for daily work, configured the AWS CLI on my local machine, and created a Zero Spend Budget to avoid unexpected charges while working through the labs.
+- Prepare a secure AWS environment for hands-on practice.
+- Configure the required AWS tools.
+- Establish cost controls before provisioning AWS resources.
 
-The AWS CLI was then configured and tested to verify that authentication was working correctly.
+#### Topics Covered
+
+- AWS account creation
+- Root user security
+- Multi-Factor Authentication (MFA)
+- IAM administrator user
+- AWS CLI installation and configuration
+- AWS Budgets
+
+#### Commands Practiced
 
 ```bash
 aws configure
 aws sts get-caller-identity
 ```
 
+#### Key Takeaways
+
+- The root user should only be used for account-level administrative tasks.
+- IAM users provide a safer way to perform everyday AWS operations.
+- AWS CLI allows AWS services to be managed directly from the command line.
+- Budget alerts should be configured before creating cloud resources.
+
+#### Repository Updates
+
+- Initialized the repository.
+- Added the `00-Setup` section.
+- Configured `.gitignore`.
+- Created the initial project documentation.
+- Started documenting my AWS learning journey.
+
 ---
 
-### What I Learned
-
-The root account should only be used for administrative tasks that require root privileges. For everyday work, an IAM user with the appropriate permissions is the recommended approach.
-
-Configuring the AWS CLI makes it possible to manage AWS resources directly from the terminal, which becomes the primary tool throughout this course.
-
-Creating a budget before provisioning resources provides an additional layer of protection against accidental AWS charges.
-
----
-
-### Repository Update
-
-Initialized the repository and created the project structure.
-
-Added the `00-Setup` section together with the first documentation files, including the study log and project notes, to begin tracking my progress throughout the certification.
 ## 2026-07-25 | Session 2
 
 ### Amazon S3 Fundamentals
@@ -43,23 +54,23 @@ Added the `00-Setup` section together with the first documentation files, includ
 #### Objectives
 
 - Understand the core concepts of Amazon S3.
-- Learn how to manage buckets and objects.
-- Compare management through the AWS Console and AWS CLI.
+- Learn how buckets and objects are managed.
+- Compare using the AWS Console and AWS CLI.
 
 #### Topics Covered
 
-- Bucket creation and configuration
+- Bucket creation
 - Object uploads and downloads
-- Object versioning
+- Versioning
 - Server-side encryption
-- Object metadata
 - Object tags
+- Object metadata
 - Object Lock
-- S3 storage classes
-- Prefixes and object keys
+- Storage classes
+- Object keys and prefixes
 - AWS CloudShell
-- High-level `aws s3` commands
-- Low-level `aws s3api` commands
+- High-level AWS CLI commands
+- Low-level AWS CLI commands
 
 #### Commands Practiced
 
@@ -81,18 +92,18 @@ aws s3api copy-object
 
 #### Key Takeaways
 
-- Amazon S3 is an object storage service rather than a traditional file system.
-- Buckets contain objects that are uniquely identified by object keys.
-- The folders displayed in the AWS Console are prefixes rather than physical directories.
-- The `aws s3` commands simplify common storage operations, while `aws s3api` exposes the complete Amazon S3 API for advanced management tasks.
-- AWS CloudShell provides a preconfigured Linux environment with the AWS CLI ready to use.
+- Amazon S3 stores data as objects inside buckets.
+- Buckets contain objects identified by unique object keys.
+- Folders displayed in the AWS Console are actually object prefixes.
+- `aws s3` provides simplified high-level commands, while `aws s3api` exposes the complete S3 API.
+- AWS CloudShell provides a Linux environment with the AWS CLI already installed.
 
 #### Repository Updates
 
 - Created the `01-Amazon-S3` section.
 - Added Amazon S3 documentation.
-- Recorded AWS CLI examples.
-- Added command references and learning notes.
+- Added AWS CLI examples.
+- Recorded commands and study notes.
 
 ---
 
@@ -103,8 +114,8 @@ aws s3api copy-object
 #### Objectives
 
 - Automate repetitive Amazon S3 operations.
-- Build reusable Bash scripts for common AWS CLI tasks.
-- Become familiar with Linux utilities used in AWS CloudShell.
+- Build reusable Bash scripts.
+- Become familiar with Linux utilities used alongside the AWS CLI.
 
 #### Topics Covered
 
@@ -114,7 +125,7 @@ aws s3api copy-object
 - Input validation
 - Bucket automation
 - Object management
-- Recursive synchronization
+- File synchronization
 - JMESPath queries
 - JSON processing with `jq`
 - Linux utilities (`tree`, `dd`, `chmod`, `set -e`)
@@ -131,18 +142,18 @@ tree
 
 #### Key Takeaways
 
-- Bash scripts make AWS CLI operations repeatable and easier to maintain.
-- User input should always be validated before executing AWS commands.
-- JMESPath queries simplify filtering AWS CLI responses.
-- `jq` provides powerful processing of JSON output.
-- Buckets created outside `us-east-1` require a `LocationConstraint` when using the S3 API.
+- Bash scripts simplify repetitive AWS CLI tasks.
+- Scripts should validate user input before execution.
+- JMESPath queries make AWS CLI output easier to filter.
+- `jq` is useful for processing JSON responses.
+- Buckets created outside `us-east-1` require a `LocationConstraint`.
 
 #### Repository Updates
 
 - Added reusable Bash scripts.
-- Expanded Amazon S3 documentation.
-- Documented Linux utilities used throughout the exercises.
+- Expanded the Amazon S3 documentation.
 - Added advanced AWS CLI examples.
+- Documented Linux utilities used throughout the exercises.
 
 ---
 
@@ -153,8 +164,8 @@ tree
 #### Objectives
 
 - Explore programmatic interaction with Amazon S3.
-- Learn different approaches to Infrastructure as Code (IaC).
-- Compare native AWS tools with third-party solutions.
+- Learn multiple Infrastructure as Code (IaC) approaches.
+- Compare AWS-native and third-party tools.
 
 #### Topics Covered
 
@@ -184,22 +195,21 @@ pulumi up
 
 #### Key Takeaways
 
-- SDKs allow applications to communicate directly with AWS services through code.
+- SDKs allow applications to communicate directly with AWS services.
 - CloudFormation is AWS's native Infrastructure as Code service.
 - Terraform provides a cloud-agnostic approach to infrastructure provisioning.
 - AWS CDK generates CloudFormation templates using programming languages.
-- Pulumi enables infrastructure provisioning with general-purpose programming languages.
-- Different Infrastructure as Code tools can provision the same AWS resources while using different workflows and syntaxes.
+- Pulumi also provisions infrastructure using general-purpose programming languages.
 
 #### Repository Updates
 
-- Added SDK examples.
+- Added AWS SDK examples.
 - Added CloudFormation examples.
 - Added Infrastructure as Code examples.
-- Expanded Amazon S3 documentation with Terraform, AWS CDK, and Pulumi.
-- Continued organizing the repository with practical examples and supporting documentation.
+- Expanded documentation with Terraform, AWS CDK, and Pulumi examples.
 
 ---
+
 ## 2026-07-28 | Session 5
 
 ### Amazon S3 — Checksums and Object Integrity
@@ -212,24 +222,28 @@ pulumi up
 #### Topics Covered
 
 - MD5 checksums
-- CRC32
+- CRC32 checksums
 - ETags
-- Object metadata
+- Object integrity
 - Terraform object updates
 
 #### Commands Practiced
 
 ```bash
 md5sum
+
 aws s3api head-object
-aws s3api put-object --checksum-algorithm CRC32
+
+aws s3api put-object \
+  --checksum-algorithm CRC32
 ```
 
 #### Key Takeaways
 
-- Checksums verify that uploaded data has not been corrupted.
-- ETags are commonly used to identify object content and detect changes.
-- Terraform can use object hashes to determine when an S3 object should be updated.
+- Checksums help verify that uploaded data has not been corrupted.
+- ETags are commonly used to detect changes to object contents.
+- `head-object` returns object metadata, including checksum information.
+- Terraform can detect file changes by comparing object hashes.
 
 #### Repository Updates
 
@@ -237,81 +251,54 @@ aws s3api put-object --checksum-algorithm CRC32
 - Documented ETag behavior.
 - Added Terraform object examples.
 
+---
+
 ## 2026-07-29 | Session 6
 
-# Amazon S3 — Object Prefixes & Metadata
+### Amazon S3 — Object Prefixes and Metadata
 
-Today's lesson focused on how Amazon S3 identifies objects internally. Before this session I thought folders actually existed inside S3, but the instructor demonstrated that they're only part of an object's key.
+#### Objectives
 
----
+- Understand how Amazon S3 organizes objects internally.
+- Learn the difference between object prefixes and traditional folders.
+- Explore both system metadata and user-defined metadata.
 
-### Object Prefixes
+#### Topics Covered
 
-An object stored as
+- Object keys
+- Object prefixes
+- Folder simulation
+- Object key length limits
+- System metadata
+- User-defined metadata
+- Metadata updates
 
-```text
-assets/images/photo.jpg
+#### Commands Practiced
+
+```bash
+aws s3api head-object \
+  --bucket <bucket-name> \
+  --key assets/images/photo.jpg
+
+aws s3api copy-object \
+  --bucket <bucket-name> \
+  --copy-source <bucket-name>/assets/images/photo.jpg \
+  --key assets/images/photo.jpg \
+  --metadata-directive REPLACE \
+  --metadata project=AWS-SAA
 ```
 
-is actually interpreted as
+#### Key Takeaways
 
-```text
-Prefix : assets/images/
-Object : photo.jpg
-```
+- Amazon S3 does not use real folders; it stores objects using object keys.
+- Prefixes are simply part of an object's key and help organize data logically.
+- The maximum length of an object key is 1,024 bytes.
+- Metadata describes an object without modifying its contents.
+- System metadata is managed by AWS, while user-defined metadata uses the `x-amz-meta-` prefix.
+- Updating metadata changes object attributes without changing the file itself.
 
-The console displays this as folders, but Amazon S3 simply stores one long object key.
+#### Repository Updates
 
-During the demonstration, different object names were tested to understand how prefixes behave. The complete object key—including every prefix—can be up to **1,024 bytes**.
-
----
-
-### Metadata
-
-Besides the object itself, Amazon S3 stores information that describes the object.
-
-System metadata is managed by AWS and includes values such as:
-
-- `Content-Type`
-- `Cache-Control`
-- `Content-Encoding`
-- `Expires`
-
-Applications can also attach their own metadata.
-
-Example:
-
-```text
-x-amz-meta-project : AWS-SAA
-x-amz-meta-owner   : Yousef
-```
-
-This information travels with the object without modifying the file itself.
-
----
-
-### Practical Observation
-
-Changing metadata doesn't change the contents of the uploaded file. Instead, it changes the information associated with that object, allowing applications and AWS services to process the object differently.
-
-Likewise, changing the folder shown in the AWS Console doesn't move an object between directories—it simply changes the object's key.
-
----
-
-### Key Takeaways
-
-✔ S3 has no real folders.
-
-✔ Prefixes are part of the object key.
-
-✔ Object keys can be up to **1,024 bytes**.
-
-✔ Metadata describes an object without changing its contents.
-
-✔ User-defined metadata uses the `x-amz-meta-` prefix.
-
----
-
-### Repository Update
-
-Expanded the Amazon S3 notes by documenting how object prefixes and metadata work, together with observations made during the hands-on demonstration.
+- Expanded the Amazon S3 documentation with notes about prefixes and metadata.
+- Added examples demonstrating how object keys simulate folders.
+- Documented the differences between system metadata and user-defined metadata.
