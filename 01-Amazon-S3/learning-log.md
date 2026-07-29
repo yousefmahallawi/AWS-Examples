@@ -1,72 +1,96 @@
 # Amazon S3 Learning Log
 
-## Session 1
-
-### Hands-on Practice
-
-- Created an S3 bucket.
-- Uploaded a file to the bucket.
-- Deleted an object from the bucket.
-- Learned that a bucket must be empty before it can be deleted.
-- Used recursive deletion to remove all objects before deleting the bucket.
-- Created a bucket using `aws s3api`.
-- Filtered JSON output using the `--query` option.
-- Learned how to display CLI output in JSON, Table, and YAML formats.
-
-### Key Takeaways
-
-- `aws s3` provides simple, high-level commands for common S3 operations.
-- `aws s3api` provides low-level API commands with advanced capabilities.
-- The `--query` option filters JSON output using JMESPath.
-- Different output formats (`json`, `table`, `yaml`) make AWS CLI responses easier to read depending on the task.
-
-### Questions to Revisit
-
-- Learn more about JMESPath query syntax.
-- Explore additional `s3api` operations.
+This document summarizes the practical work completed while studying Amazon S3 for the AWS Certified Solutions Architect – Associate (SAA-C03) certification. Each session records the concepts explored, hands-on exercises completed, and the key lessons learned throughout the course.
 
 ---
 
-## Session 2
+# Session 1
 
-### Hands-on Practice
+## Hands-on Practice
 
-- Created local files using `touch`.
-- Edited files using `nano`.
-- Learned basic Linux commands such as `ls` and `ls -la`.
-- Uploaded files to Amazon S3 using `put-object`.
-- Downloaded an object from S3 using `get-object`.
-- Synced a local directory to an S3 bucket using `aws s3 sync`.
-- Listed all objects stored in a bucket.
-- Used `--query` to display only object names.
+During this session I became familiar with the basic Amazon S3 workflow by creating buckets, uploading objects, and managing them through both the AWS Management Console and the AWS CLI.
 
-### New Concepts
+Practical exercises included:
 
-- `aws s3 sync` copies an entire directory while preserving its structure.
-- `put-object` uploads a single object and allows additional options such as specifying the content type.
-- `get-object` downloads an object from S3 to a local file.
-- Every uploaded object receives an **ETag**, which is commonly used to identify the uploaded object's content.
-- Objects are stored using the **STANDARD** storage class by default unless another storage class is specified.
-- Amazon S3 automatically applied **AES256 server-side encryption** to uploaded objects.
+- Creating and deleting S3 buckets.
+- Uploading objects to a bucket.
+- Deleting individual objects.
+- Emptying a bucket before deleting it.
+- Creating buckets with `aws s3api`.
+- Filtering CLI output using JMESPath queries.
+- Displaying AWS CLI output in JSON, Table, and YAML formats.
+
+## Key Takeaways
+
+- `aws s3` provides high-level commands for common file operations.
+- `aws s3api` exposes the complete Amazon S3 API and provides finer control over S3 resources.
+- JMESPath queries simplify filtering large JSON responses returned by the AWS CLI.
+- Different output formats improve readability depending on the task being performed.
+
+## Questions to Revisit
+
+- Learn more advanced JMESPath query syntax.
+- Explore additional `aws s3api` operations.
+
 ---
 
-## Session 3
+# Session 2
 
-### Hands-on Practice
+## Hands-on Practice
 
-- Learned how to automate AWS CLI commands using Bash scripts.
-- Created a reusable script for creating S3 buckets.
-- Passed command-line arguments to a Bash script.
-- Made scripts executable using `chmod`.
-- Executed scripts directly from the terminal.
+This session focused on working with Amazon S3 objects from the command line while becoming more comfortable with the Linux environment provided by AWS CloudShell.
 
-### New Concepts
+Practical exercises included:
 
-- A Bash script can automate repetitive AWS CLI tasks.
-- `#!/usr/bin/env bash` specifies that the script should be executed using Bash.
-- `$1` represents the first argument passed to the script.
-- Variables can be stored and reused inside a script.
+- Creating local files using `touch`.
+- Editing files with `nano`.
+- Practicing Linux commands such as `ls` and `ls -la`.
+- Uploading objects using `put-object`.
+- Downloading objects using `get-object`.
+- Synchronizing local directories with Amazon S3.
+- Listing bucket contents.
+- Filtering object names with `--query`.
+
+## New Concepts
+
+- `aws s3 sync` uploads only new or modified files while preserving directory structure.
+- `put-object` uploads a single object and supports additional configuration such as metadata and content type.
+- `get-object` downloads an S3 object to the local machine.
+- Every uploaded object receives an **ETag**, which identifies a specific version of the object's content. Depending on the upload method and encryption settings, the ETag is not always an MD5 hash.
+- Objects are stored in the **STANDARD** storage class unless another storage class is specified.
+- Amazon S3 automatically applies **server-side encryption (SSE-S3)** using **AES256** by default.
+
+---
+
+# Session 3
+
+## Hands-on Practice
+
+This session introduced Bash scripting as a way to automate repetitive AWS CLI tasks and build reusable command-line utilities.
+
+Practical exercises included:
+
+- Creating reusable Bash scripts for Amazon S3.
+- Passing command-line arguments to scripts.
+- Making scripts executable with `chmod`.
+- Executing scripts directly from the terminal.
+- Automating bucket creation through reusable scripts.
+
+## New Concepts
+
+- Bash scripts help automate repetitive AWS CLI operations.
+- The shebang
+
+```bash
+#!/usr/bin/env bash
+```
+
+specifies the interpreter used to execute the script.
+
+- `$1` represents the first command-line argument passed to a script.
+- Variables allow values to be stored and reused throughout a script.
 - `chmod u+x` grants execute permission to a script.
+- Reusable scripts improve consistency while reducing manual work.
 ---
 
 ## Session 4
@@ -85,8 +109,9 @@
 - `jq` is a command-line tool used to filter and manipulate JSON output.
 - Bash scripts can combine Linux commands with AWS CLI commands to automate complete workflows.
 - `aws s3 sync` uploads only changed files, making it efficient for synchronizing directories.
-- `delete-objects` removes multiple objects in one request instead of deleting them individually.
-- Scripts become more useful as they include validation, automation, and reusable logic.
+- `delete-objects` removes multiple objects in a single API request instead of deleting them individually.
+- Reusable scripts become more valuable when they include input validation and error handling.
+
 ---
 
 ## Session 5
@@ -95,7 +120,7 @@
 
 - Explored the AWS SDK for Ruby.
 - Learned how applications interact with Amazon S3 programmatically.
-- Created an S3 client.
+- Created an Amazon S3 client using the AWS SDK.
 - Used environment variables to configure AWS resources.
 - Generated random files and uploaded them to an S3 bucket.
 - Introduced Infrastructure as Code (IaC) using AWS CloudFormation.
@@ -103,50 +128,58 @@
 
 ### Key Takeaways
 
-- The AWS SDK allows applications to communicate with AWS services directly from code.
-- Environment variables make applications easier to configure without changing source code.
-- CloudFormation treats infrastructure as code, making deployments repeatable and version-controlled.
-- Infrastructure can be deployed, updated, and deleted using CloudFormation stacks instead of manual console operations.
+- The AWS SDK allows applications to interact directly with AWS services through code.
+- Environment variables separate configuration from application logic.
+- CloudFormation manages infrastructure as code, making deployments repeatable and version-controlled.
+- CloudFormation deployments are idempotent, meaning existing resources are updated instead of duplicated whenever possible.
+- Infrastructure can be deployed, updated, and removed without manually creating resources in the AWS Management Console.
+
 ---
 
 ## Session 6
 
-### Infrastructure as Code
-
-#### Hands-on Practice
+### Hands-on Practice
 
 - Explored multiple Infrastructure as Code (IaC) tools.
 - Created an Amazon S3 bucket using Terraform.
 - Created an Amazon S3 bucket using AWS CDK with TypeScript.
 - Created an Amazon S3 bucket using Pulumi with Python.
-- Compared different approaches to defining cloud infrastructure as code.
-
-#### Key Takeaways
-
-- CloudFormation is AWS's native Infrastructure as Code service.
-- Terraform is cloud-agnostic and can manage resources across multiple cloud providers.
-- AWS CDK allows infrastructure to be defined using programming languages such as TypeScript, Python, and C#.
-- Pulumi also uses general-purpose programming languages to define cloud infrastructure.
-- Although the syntax differs, all four tools can provision the same AWS resources.
----
-
-## Session 5 – Checksums and Object Integrity
-
-### Objectives
-
-Understand how Amazon S3 verifies uploaded objects and how Terraform detects object changes.
-
-### Topics Covered
-
-- MD5 checksums
-- CRC32 checksums
-- ETags
-- Object metadata
-- Terraform object updates
+- Compared different approaches to provisioning the same AWS infrastructure.
 
 ### Key Takeaways
 
-- An ETag is commonly used to identify a specific version of an uploaded object.
-- Checksums help verify data integrity after upload.
-- `head-object` returns object metadata, including checksum-related information.
-- Terraform compares object state to determine whether resources need to be updated.
+- CloudFormation is AWS's native Infrastructure as Code service.
+- Terraform is cloud-agnostic and can manage infrastructure across multiple cloud providers.
+- AWS CDK allows infrastructure to be defined using programming languages such as TypeScript, Python, Java, and C#.
+- Pulumi also provisions cloud infrastructure using general-purpose programming languages.
+- Although the syntax differs, all of these tools can be used to create and manage the same AWS resources.
+
+---
+
+## Session 7
+
+### Hands-on Practice
+
+- Explored how Amazon S3 validates uploaded objects using checksums.
+- Compared MD5 hashes with Amazon S3 ETags.
+- Retrieved object metadata using the `head-object` API.
+- Uploaded an object using the `CRC32` checksum algorithm.
+- Observed how Terraform detects file changes before updating S3 objects.
+- Learned how Amazon S3 organizes objects using prefixes instead of traditional folders.
+- Examined both system-defined metadata and user-defined metadata.
+
+### New Concepts
+
+- Checksums verify the integrity of uploaded and downloaded objects.
+- An ETag is commonly used to identify a specific version of an object's contents, but it is not always equal to an MD5 hash.
+- Object prefixes simulate folders in the AWS Management Console but are simply part of the object key.
+- The complete object key, including prefixes, can be up to **1,024 bytes** long.
+- System metadata is managed by AWS, while user-defined metadata is stored using the `x-amz-meta-` prefix.
+- Updating metadata changes information about an object without modifying the object's contents.
+
+### Key Takeaways
+
+- Amazon S3 stores objects in a flat namespace rather than a hierarchical file system.
+- Prefixes provide logical organization without creating actual directories.
+- Metadata makes objects easier to categorize and process without changing the underlying file.
+- Understanding ETags, checksums, prefixes, and metadata is important when building applications that interact with Amazon S3.
