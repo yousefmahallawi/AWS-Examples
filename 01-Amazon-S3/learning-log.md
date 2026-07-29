@@ -204,3 +204,24 @@ specifies the interpreter used to execute the script.
 - Virtual-hosted requests are the preferred request style for Amazon S3.
 - Dualstack endpoints support both IPv4 and IPv6 connectivity.
 - Amazon S3 offers multiple storage classes that balance cost, durability, availability, and retrieval speed for different workloads.
+### Hands-on Practice
+
+- Compared Amazon S3 Standard, Standard-IA, One Zone-IA, Express One Zone, and Reduced Redundancy Storage (RRS).
+- Created an S3 bucket and uploaded an object using the `STANDARD_IA` storage class.
+- Learned the pricing differences between storage classes, including retrieval fees and minimum storage duration charges.
+- Explored the characteristics and use cases of S3 Express One Zone.
+- Learned why Reduced Redundancy Storage (RRS) is considered a legacy storage class and is no longer recommended.
+- Reviewed the relationship between Amazon S3 Glacier and S3 Glacier Deep Archive.
+
+### Commands Practiced
+
+```bash
+aws s3 mb s3://class-fun-ab-6346
+
+echo "Hello World" > hello.txt
+
+aws s3 cp hello.txt s3://class-fun-ab-6346 --storage-class STANDARD_IA
+
+aws s3 rm s3://class-fun-ab-6346/hello.txt
+
+aws s3 rb s3://class-fun-ab-6346

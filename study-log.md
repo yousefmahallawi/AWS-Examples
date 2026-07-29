@@ -336,3 +336,56 @@ aws s3api copy-object \
 - Documented S3 request styles.
 - Added S3 storage class overview.
 - Expanded Amazon S3 documentation.
+
+---
+
+## 2026-07-30 | Session 9
+
+### Amazon S3 — Storage Classes
+
+#### Objectives
+
+- Learn the characteristics of Amazon S3 storage classes.
+- Compare storage classes based on performance, availability, durability, retrieval time, and cost.
+- Understand when each storage class should be used.
+
+#### Topics Covered
+
+- S3 Standard
+- S3 Reduced Redundancy Storage (RRS)
+- S3 Standard-IA
+- S3 One Zone-IA
+- S3 Express One Zone
+- S3 Glacier Instant Retrieval
+- S3 Glacier Flexible Retrieval
+- S3 Glacier Deep Archive
+- S3 Glacier Vault
+
+#### Commands Practiced
+
+```bash
+aws s3 cp hello.txt s3://class-fun-ab-6346 \
+  --storage-class STANDARD_IA
+
+aws s3 cp archive.zip s3://my-bucket \
+  --storage-class GLACIER_IR
+
+aws s3 cp backup.tar.gz s3://my-bucket \
+  --storage-class GLACIER
+
+aws s3 cp records.zip s3://my-bucket \
+  --storage-class DEEP_ARCHIVE
+```
+
+#### Key Takeaways
+
+- Amazon S3 provides multiple storage classes optimized for different access patterns and budgets.
+- Storage classes differ in availability, retrieval speed, storage cost, retrieval fees, and minimum storage duration.
+- Glacier storage classes are integrated into Amazon S3 and should not be confused with the legacy Glacier Vault service.
+- Selecting the appropriate storage class can significantly reduce storage costs while meeting application requirements.
+
+#### Repository Updates
+
+- Expanded the Amazon S3 documentation with detailed storage class comparisons.
+- Added notes covering Glacier storage classes and retrieval options.
+- Documented storage class pricing characteristics, retrieval behavior, and common use cases.
