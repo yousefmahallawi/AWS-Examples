@@ -247,3 +247,82 @@ aws s3api put-object --checksum-algorithm CRC32
 - Added checksum examples.
 - Documented ETag behavior.
 - Added Terraform object examples.
+
+## 2026-07-29 | Session 6
+
+# Amazon S3 — Object Prefixes & Metadata
+
+Today's lesson focused on how Amazon S3 identifies objects internally. Before this session I thought folders actually existed inside S3, but the instructor demonstrated that they're only part of an object's key.
+
+---
+
+### Object Prefixes
+
+An object stored as
+
+```text
+assets/images/photo.jpg
+```
+
+is actually interpreted as
+
+```text
+Prefix : assets/images/
+Object : photo.jpg
+```
+
+The console displays this as folders, but Amazon S3 simply stores one long object key.
+
+During the demonstration, different object names were tested to understand how prefixes behave. The complete object key—including every prefix—can be up to **1,024 bytes**.
+
+---
+
+### Metadata
+
+Besides the object itself, Amazon S3 stores information that describes the object.
+
+System metadata is managed by AWS and includes values such as:
+
+- `Content-Type`
+- `Cache-Control`
+- `Content-Encoding`
+- `Expires`
+
+Applications can also attach their own metadata.
+
+Example:
+
+```text
+x-amz-meta-project : AWS-SAA
+x-amz-meta-owner   : Yousef
+```
+
+This information travels with the object without modifying the file itself.
+
+---
+
+### Practical Observation
+
+Changing metadata doesn't change the contents of the uploaded file. Instead, it changes the information associated with that object, allowing applications and AWS services to process the object differently.
+
+Likewise, changing the folder shown in the AWS Console doesn't move an object between directories—it simply changes the object's key.
+
+---
+
+### Key Takeaways
+
+✔ S3 has no real folders.
+
+✔ Prefixes are part of the object key.
+
+✔ Object keys can be up to **1,024 bytes**.
+
+✔ Metadata describes an object without changing its contents.
+
+✔ User-defined metadata uses the `x-amz-meta-` prefix.
+
+---
+
+### Repository Update
+
+Expanded the Amazon S3 notes by documenting how object prefixes and metadata work, together with observations made during the hands-on demonstration.
