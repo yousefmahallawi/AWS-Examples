@@ -302,3 +302,37 @@ aws s3api copy-object \
 - Expanded the Amazon S3 documentation with notes about prefixes and metadata.
 - Added examples demonstrating how object keys simulate folders.
 - Documented the differences between system metadata and user-defined metadata.
+## 2026-07-30 | Session 8
+
+### Amazon S3 — Advanced Features
+
+#### Objectives
+
+- Learn advanced Amazon S3 features and storage options.
+- Understand object protection and request styles.
+- Compare Amazon S3 storage classes.
+
+#### Topics Covered
+
+- S3 Object Lock
+- Retention Periods
+- Legal Holds
+- S3 Bucket URI
+- AWS CLI namespaces
+- Virtual-hosted vs Path-style requests
+- DualStack endpoints
+- Amazon S3 Storage Classes
+
+#### Key Takeaways
+
+- Object Lock prevents objects from being deleted or overwritten.
+- S3 Bucket URIs are commonly used with AWS CLI commands.
+- Virtual-hosted-style requests are the recommended request format.
+- Amazon S3 provides multiple storage classes for different access patterns and cost requirements.
+
+#### Repository Updates
+
+- Added notes about Object Lock.
+- Documented S3 request styles.
+- Added S3 storage class overview.
+- Expanded Amazon S3 documentation.

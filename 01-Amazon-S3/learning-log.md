@@ -183,3 +183,24 @@ specifies the interpreter used to execute the script.
 - Prefixes provide logical organization without creating actual directories.
 - Metadata makes objects easier to categorize and process without changing the underlying file.
 - Understanding ETags, checksums, prefixes, and metadata is important when building applications that interact with Amazon S3.
+
+## Session 8
+
+### Hands-on Practice
+
+- Explored Amazon S3 Object Lock and learned how it protects objects from being deleted or overwritten.
+- Compared retention periods and legal holds as two methods of protecting S3 objects.
+- Used S3 bucket URIs with AWS CLI commands.
+- Learned the differences between `aws s3`, `aws s3api`, `aws s3control`, and `aws s3outposts`.
+- Compared virtual-hosted and path-style S3 requests.
+- Studied standard and dualstack S3 endpoints.
+- Reviewed the available Amazon S3 storage classes and their common use cases.
+
+### Key Takeaways
+
+- Object Lock uses the Write Once Read Many (WORM) model and must be enabled when the bucket is created.
+- S3 bucket URIs are commonly used when working with high-level AWS CLI commands.
+- `aws s3` provides simplified commands, while `aws s3api` exposes low-level API operations. `aws s3control` and `aws s3outposts` are used for specialized S3 management tasks.
+- Virtual-hosted requests are the preferred request style for Amazon S3.
+- Dualstack endpoints support both IPv4 and IPv6 connectivity.
+- Amazon S3 offers multiple storage classes that balance cost, durability, availability, and retrieval speed for different workloads.
