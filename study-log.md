@@ -389,3 +389,77 @@ aws s3 cp records.zip s3://my-bucket \
 - Expanded the Amazon S3 documentation with detailed storage class comparisons.
 - Added notes covering Glacier storage classes and retrieval options.
 - Documented storage class pricing characteristics, retrieval behavior, and common use cases.
+
+## 2026-07-30 | Session 10
+
+### Amazon S3 — Advanced Storage Classes
+
+#### Objectives
+
+- Complete the remaining Amazon S3 storage classes.
+- Understand Intelligent-Tiering automation.
+- Compare storage classes based on performance, durability, availability, latency, and cost.
+
+#### Topics Covered
+
+- S3 Glacier Deep Archive
+- S3 Intelligent-Tiering
+- Access tiers
+- Monitoring charges
+- Retrieval tiers
+- Storage class comparison
+
+#### Commands Practiced
+
+```bash
+aws s3api put-object \
+  --bucket my-bucket \
+  --key myfile \
+  --body path/to/local/file \
+  --storage-class INTELLIGENT_TIERING
+  ## 2026-07-30 | Session 11
+
+### Amazon S3 — Security Fundamentals
+
+#### Objectives
+
+- Understand the security features available in Amazon S3.
+- Learn how Amazon S3 controls access to buckets and objects.
+- Explore the different methods used to protect data stored in S3.
+
+#### Topics Covered
+
+- S3 Security Overview
+- S3 Block Public Access
+- Bucket Policies
+- Access Control Lists (ACLs)
+- Access Points
+- Access Grants
+- Object Ownership
+- Versioning
+- MFA Delete
+- Object Tags
+- CORS
+- AWS PrivateLink for Amazon S3
+- IAM Access Analyzer for S3
+- In-Transit Encryption
+- Server-Side Encryption
+- Client-Side Encryption
+- Compliance Validation
+- Infrastructure Security
+
+#### Key Takeaways
+
+- Amazon S3 provides multiple layers of security for protecting buckets, objects, and data access.
+- S3 Block Public Access is enabled by default and helps prevent accidental public exposure of buckets.
+- Bucket Policies are the recommended way to manage permissions using JSON-based access policies.
+- ACLs are a legacy permission system and are generally replaced by Bucket Policies or Access Points.
+- Access Points simplify permission management for shared datasets.
+- Encryption can protect data both while it is being transmitted and while it is stored.
+- Versioning and MFA Delete provide additional protection against accidental or malicious deletion.
+
+#### Repository Updates
+
+- Added documentation covering Amazon S3 security features.
+- Added notes explaining S3 Block Public Access and ACLs.
+- Expanded the security documentation with access management and encryption concepts.

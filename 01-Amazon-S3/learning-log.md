@@ -225,3 +225,54 @@ aws s3 cp hello.txt s3://class-fun-ab-6346 --storage-class STANDARD_IA
 aws s3 rm s3://class-fun-ab-6346/hello.txt
 
 aws s3 rb s3://class-fun-ab-6346
+
+## Session 9
+
+### Hands-on Practice
+
+- Compared the characteristics of Amazon S3 storage classes.
+- Learned when to use Standard, Standard-IA, One Zone-IA, Express One Zone, Intelligent-Tiering, and Glacier storage classes.
+- Explored the retrieval options for Glacier Flexible Retrieval and Glacier Deep Archive.
+- Learned how Intelligent-Tiering automatically moves objects between storage tiers based on access patterns.
+- Uploaded objects to different storage classes using the AWS CLI with the `--storage-class` option.
+- Compared storage classes based on durability, availability, retrieval latency, retrieval fees, and minimum storage duration.
+
+### Key Takeaways
+
+- Amazon S3 provides multiple storage classes optimized for different access patterns, performance requirements, and costs.
+- S3 Standard is the default storage class for frequently accessed data.
+- Intelligent-Tiering automatically moves objects between access tiers but charges a small monitoring fee.
+- Standard-IA and One Zone-IA reduce storage costs but include retrieval fees and minimum storage duration charges.
+- Glacier Instant Retrieval provides millisecond access for rarely accessed data.
+- Glacier Flexible Retrieval offers Expedited, Standard, and Bulk retrieval options for archived data.
+- Glacier Deep Archive provides the lowest storage cost but has retrieval times measured in hours.
+- The legacy Glacier Vault service is different from the Glacier storage classes integrated into Amazon S3.
+
+### Questions to Revisit
+
+- Compare the pricing and minimum storage duration for every S3 storage class.
+- Practice selecting the most appropriate storage class for different real-world scenarios.
+## Session 10
+
+### Hands-on Practice
+
+- Learned the security features available in Amazon S3.
+- Compared Bucket Policies with Access Control Lists (ACLs).
+- Studied Amazon S3 Block Public Access and its four protection settings.
+- Explored Access Points and Access Grants for managing access at scale.
+- Reviewed encryption options including in-transit, server-side, and client-side encryption.
+- Learned how Versioning, MFA Delete, Object Ownership, and Object Tags improve data protection.
+
+### Key Takeaways
+
+- S3 Block Public Access helps prevent the most common S3 security misconfiguration by blocking unintended public access.
+- Bucket Policies provide flexible, JSON-based permissions and are preferred over ACLs.
+- ACLs are a legacy feature with limited capabilities and should generally be avoided in new designs.
+- Access Points simplify permission management for shared datasets.
+- Amazon S3 supports multiple encryption methods to secure data both at rest and in transit.
+- Versioning and MFA Delete help protect objects from accidental or unauthorized deletion.
+
+### Questions to Revisit
+
+- Practice writing Bucket Policies.
+- Compare IAM Policies, Bucket Policies, ACLs, and Access Points to understand when each should be used.
