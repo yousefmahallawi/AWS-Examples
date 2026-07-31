@@ -276,3 +276,26 @@ aws s3 rb s3://class-fun-ab-6346
 
 - Practice writing Bucket Policies.
 - Compare IAM Policies, Bucket Policies, ACLs, and Access Points to understand when each should be used.
+## Session 11
+
+### Hands-on Practice
+
+* Created an Amazon S3 bucket for testing Access Control Lists (ACLs).
+* Modified Block Public Access settings to allow ACL evaluation.
+* Configured bucket ownership using `BucketOwnerPreferred`.
+* Applied a bucket ACL using a JSON access control policy file.
+* Simulated cross-account object uploads and verified bucket contents.
+* Cleaned up the bucket and uploaded objects after testing.
+
+### Key Takeaways
+
+* ACLs are a legacy mechanism for granting basic read and write permissions to other AWS accounts.
+* Block Public Access can prevent ACLs from taking effect if the ACL-related settings remain enabled.
+* `BucketOwnerPreferred` helps ensure that the bucket owner becomes the owner of uploaded objects when the uploader grants the appropriate ACL.
+* ACLs have significant limitations compared with Bucket Policies and IAM Policies because they cannot express conditional logic or explicit deny rules.
+* Modern Amazon S3 architectures generally prefer Bucket Policies, IAM Policies, or Access Points instead of ACLs.
+
+### Questions to Revisit
+
+* Review the differences between ACLs, Bucket Policies, and IAM Policies.
+* Practice identifying scenarios where ACLs might still appear in legacy environments.

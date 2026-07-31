@@ -1,0 +1,21 @@
+{
+"Owner": {
+"ID": "REPLACE_WITH_YOUR_CANONICAL_USER_ID"
+},
+"Grants": [
+{
+"Grantee": {
+"Type": "CanonicalUser",
+"ID": "REPLACE_WITH_OTHER_ACCOUNT_CANONICAL_USER_ID"
+},
+"Permission": "WRITE"
+},
+{
+"Grantee": {
+"Type": "CanonicalUser",
+"ID": "REPLACE_WITH_OTHER_ACCOUNT_CANONICAL_USER_ID"
+},
+"Permission": "READ_ACP"
+}
+]
+}

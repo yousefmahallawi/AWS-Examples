@@ -463,3 +463,52 @@ aws s3api put-object \
 - Added documentation covering Amazon S3 security features.
 - Added notes explaining S3 Block Public Access and ACLs.
 - Expanded the security documentation with access management and encryption concepts.
+
+## 2026-07-31 | Session 12
+
+### Amazon S3 — ACLs and Object Ownership
+
+#### Objectives
+
+* Understand how Access Control Lists (ACLs) work in Amazon S3.
+* Learn how bucket ownership affects uploaded objects.
+* Explore legacy cross-account upload workflows.
+
+#### Topics Covered
+
+* S3 Access Control Lists (ACLs)
+* Bucket Ownership Controls
+* `BucketOwnerPreferred`
+* Block Public Access and ACL interaction
+* Cross-account object uploads
+* ACL policy files
+* Legacy access management patterns
+
+#### Commands Practiced
+
+```bash
+aws s3api create-bucket
+aws s3api put-public-access-block
+aws s3api get-public-access-block
+aws s3api put-bucket-ownership-controls
+aws s3api put-bucket-acl
+aws s3 cp
+aws s3 ls
+aws s3 rm
+aws s3 rb
+```
+
+#### Key Takeaways
+
+* ACLs are a legacy feature that provides only basic permission management.
+* Block Public Access settings can override or ignore public ACLs.
+* Bucket Ownership Controls help determine which AWS account owns uploaded objects.
+* `BucketOwnerPreferred` is commonly used when accepting uploads from another AWS account.
+* Bucket Policies and IAM Policies are generally preferred over ACLs for new Amazon S3 designs.
+
+#### Repository Updates
+
+* Added ACL cross-account examples.
+* Added ownership control documentation.
+* Added a sample ACL policy file.
+* Expanded the Amazon S3 security documentation with ACL and ownership concepts.
