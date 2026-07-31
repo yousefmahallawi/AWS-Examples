@@ -512,3 +512,58 @@ aws s3 rb
 * Added ownership control documentation.
 * Added a sample ACL policy file.
 * Expanded the Amazon S3 security documentation with ACL and ownership concepts.
+
+## 2026-07-31 | Session 13
+
+### Amazon S3 — Bucket Policies
+
+#### Objectives
+
+- Understand how Amazon S3 Bucket Policies provide resource-based access control.
+- Learn how to grant cross-account access to S3 buckets.
+- Explore common policy conditions used to secure S3 resources.
+
+#### Topics Covered
+
+- S3 Bucket Policies
+- Resource-based policies
+- IAM principals
+- Cross-account access
+- Bucket policy JSON documents
+- IP address restrictions
+- Object tag conditions
+
+#### Commands Practiced
+
+```bash
+aws s3 mb s3://bucket-policy-example-ab-5235
+
+aws s3api put-bucket-policy \
+  --bucket bucket-policy-example-ab-5235 \
+  --policy file://policy.json
+
+touch bootcamp.txt
+
+aws s3 cp bootcamp.txt s3://bucket-policy-example-ab-5235
+
+aws s3 ls s3://bucket-policy-example-ab-5235
+
+aws s3 rm s3://bucket-policy-example-ab-5235/bootcamp.txt
+
+aws s3 rb s3://bucket-policy-example-ab-5235
+```
+
+#### Key Takeaways
+
+- Bucket Policies are JSON-based resource policies attached directly to an S3 bucket.
+- Unlike IAM policies, Bucket Policies are evaluated as part of the bucket itself.
+- Bucket Policies can grant access to AWS accounts, IAM users, IAM roles, and AWS services.
+- Conditions such as source IP addresses and object tags can be used to implement fine-grained access control.
+- Bucket Policies are the recommended mechanism for granting cross-account access instead of using legacy ACLs.
+
+#### Repository Updates
+
+- Added a Bucket Policies section to the Amazon S3 documentation.
+- Added AWS CLI examples for creating and applying Bucket Policies.
+- Added a sample `policy.json` file.
+- Expanded the repository's Amazon S3 security documentation.

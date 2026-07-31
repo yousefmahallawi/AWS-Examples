@@ -299,3 +299,26 @@ aws s3 rb s3://class-fun-ab-6346
 
 * Review the differences between ACLs, Bucket Policies, and IAM Policies.
 * Practice identifying scenarios where ACLs might still appear in legacy environments.
+
+## Session 12
+
+### Hands-on Practice
+
+- Created an Amazon S3 bucket.
+- Applied a Bucket Policy using the AWS CLI.
+- Learned how Bucket Policies grant access to other AWS accounts and IAM principals.
+- Tested bucket access from another AWS account.
+- Explored how Bucket Policies can restrict access based on IP addresses and object tags.
+- Removed the uploaded object and deleted the bucket.
+
+### Key Takeaways
+
+- Bucket Policies are JSON-based resource policies attached directly to S3 buckets.
+- They provide fine-grained access control and are the preferred alternative to ACLs.
+- Bucket Policies can grant permissions to AWS accounts, IAM users, IAM roles, and AWS services.
+- Conditions such as IP addresses and object tags can be used to further restrict access.
+
+### Questions to Revisit
+
+- Practice writing Bucket Policy conditions.
+- Compare Bucket Policies, IAM Policies, Access Points, and ACLs.
