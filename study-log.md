@@ -567,3 +567,30 @@ aws s3 rb s3://bucket-policy-example-ab-5235
 - Added AWS CLI examples for creating and applying Bucket Policies.
 - Added a sample `policy.json` file.
 - Expanded the repository's Amazon S3 security documentation.
+
+## 2026-07-30 | Session 14
+
+### Amazon S3 — Bucket Policies, Access Grants, and Access Analyzer
+
+#### Objectives
+
+- Compare Amazon S3 Bucket Policies with IAM Policies.
+- Learn how Amazon S3 Access Grants simplify data access.
+- Understand how IAM Access Analyzer for S3 identifies unintended public access.
+
+#### Topics Covered
+
+- S3 Bucket Policies
+- IAM Policies
+- Bucket Policies vs IAM Policies
+- Amazon S3 Access Grants
+- IAM Identity Center integration
+- Temporary credentials
+- IAM Access Analyzer for S3
+
+#### Commands Practiced
+
+```bash
+aws s3api put-bucket-policy \
+  --bucket bucket-policy-example-ab-5235 \
+  --policy file://policy.json

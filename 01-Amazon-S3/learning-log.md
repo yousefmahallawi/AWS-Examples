@@ -280,12 +280,12 @@ aws s3 rb s3://class-fun-ab-6346
 
 ### Hands-on Practice
 
-* Created an Amazon S3 bucket for testing Access Control Lists (ACLs).
-* Modified Block Public Access settings to allow ACL evaluation.
-* Configured bucket ownership using `BucketOwnerPreferred`.
-* Applied a bucket ACL using a JSON access control policy file.
-* Simulated cross-account object uploads and verified bucket contents.
-* Cleaned up the bucket and uploaded objects after testing.
+- Created an Amazon S3 bucket for testing Access Control Lists (ACLs).
+- Modified Block Public Access settings to allow ACL evaluation.
+- Configured bucket ownership using `BucketOwnerPreferred`.
+- Applied a bucket ACL using a JSON access control policy file.
+- Simulated cross-account object uploads and verified bucket contents.
+-Cleaned up the bucket and uploaded objects after testing.
 
 ### Key Takeaways
 
@@ -322,3 +322,30 @@ aws s3 rb s3://class-fun-ab-6346
 
 - Practice writing Bucket Policy conditions.
 - Compare Bucket Policies, IAM Policies, Access Points, and ACLs.
+
+
+---
+
+# Learning Log — Session 13
+
+```md
+## Session 13
+
+### Hands-on Practice
+
+- Compared Amazon S3 Bucket Policies with IAM Policies.
+- Learned when Bucket Policies are preferred over IAM Policies.
+- Explored Amazon S3 Access Grants.
+- Learned how Access Grants integrates with directory services such as IAM Identity Center and Active Directory.
+- Studied how temporary credentials are issued for S3 access.
+- Explored IAM Access Analyzer for S3 and how it detects publicly accessible buckets.
+
+### New Concepts
+
+- Bucket Policies are resource-based policies that apply directly to an S3 bucket.
+- IAM Policies are identity-based policies that can grant permissions across multiple AWS services.
+- Bucket Policies support multiple principals, making them useful for cross-account access.
+- Amazon S3 Access Grants simplifies access to datasets stored in S3 by mapping external identities to specific locations.
+- Access Grants issues temporary credentials with READ, WRITE, or READWRITE permissions.
+- IAM Access Analyzer for S3 continuously analyzes bucket policies and reports buckets that are publicly accessible or shared with other AWS accounts.
+- Even if a Bucket Policy allows public access, Amazon S3 Block Public Access can still prevent that access when enabled.
