@@ -323,12 +323,6 @@ aws s3 rb s3://class-fun-ab-6346
 - Practice writing Bucket Policy conditions.
 - Compare Bucket Policies, IAM Policies, Access Points, and ACLs.
 
-
----
-
-# Learning Log — Session 13
-
-```md
 ## Session 13
 
 ### Hands-on Practice
@@ -349,3 +343,25 @@ aws s3 rb s3://class-fun-ab-6346
 - Access Grants issues temporary credentials with READ, WRITE, or READWRITE permissions.
 - IAM Access Analyzer for S3 continuously analyzes bucket policies and reports buckets that are publicly accessible or shared with other AWS accounts.
 - Even if a Bucket Policy allows public access, Amazon S3 Block Public Access can still prevent that access when enabled.
+
+## Session 14
+
+### Hands-on Practice
+
+- Learned how Amazon S3 traffic can remain private using AWS networking services.
+- Compared AWS PrivateLink with VPC Gateway Endpoints.
+- Created Amazon S3 static websites.
+- Configured bucket policies for website hosting.
+- Enabled static website hosting on S3 buckets.
+- Applied a CORS configuration to an Amazon S3 bucket.
+- Uploaded website files and JavaScript resources.
+- Tested browser access between different origins.
+
+### New Concepts
+
+- AWS PrivateLink uses Interface Endpoints to privately connect VPCs to AWS services and supports cross-account access.
+- VPC Gateway Endpoints provide free private access to Amazon S3 and DynamoDB but only within the same AWS account.
+- Cross-Origin Resource Sharing (CORS) uses HTTP headers to control which websites are allowed to access resources from another origin.
+- Amazon S3 supports CORS rules in JSON or XML format.
+- Static website hosting often requires a properly configured CORS policy when resources are loaded from different domains.
+- Using specific allowed origins is more secure than allowing all origins with the wildcard (`*`).

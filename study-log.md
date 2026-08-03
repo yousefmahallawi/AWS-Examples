@@ -594,3 +594,90 @@ aws s3 rb s3://bucket-policy-example-ab-5235
 aws s3api put-bucket-policy \
   --bucket bucket-policy-example-ab-5235 \
   --policy file://policy.json
+
+  ---
+
+## 2026-07-31 | Session 12
+
+### Amazon S3 — Network Privacy and Cross-Origin Resource Sharing (CORS)
+
+#### Objectives
+
+- Understand how Amazon S3 keeps network traffic private.
+- Learn the differences between AWS PrivateLink and VPC Gateway Endpoints.
+- Explore how Cross-Origin Resource Sharing (CORS) works with Amazon S3 static websites.
+
+#### Topics Covered
+
+- Internetwork traffic privacy
+- AWS PrivateLink
+- VPC Gateway Endpoints
+- Cross-account connectivity
+- VPC Endpoint Policies
+- Cross-Origin Resource Sharing (CORS)
+- CORS request and response headers
+- Amazon S3 CORS configuration
+- Static website hosting
+- Bucket website configuration
+
+#### Commands Practiced
+
+```bash
+aws s3 mb s3://cors-fun-ab-36252
+
+aws s3api put-public-access-block \
+  --bucket cors-fun-ab-36252 \
+  --public-access-block-configuration \
+  "BlockPublicAcls=true,IgnorePublicAcls=true,BlockPublicPolicy=false,RestrictPublicBuckets=false"
+
+aws s3api put-bucket-policy \
+  --bucket cors-fun-ab-36252 \
+  --policy file://bucket-policy.json
+
+aws s3api put-bucket-website \
+  --bucket cors-fun-ab-36252 \
+  --website-configuration file://website.json
+
+aws s3 cp index.html s3://cors-fun-ab-36252
+
+aws s3 mb s3://cors-fun2-ab-36252
+
+aws s3api put-public-access-block \
+  --bucket cors-fun2-ab-36252 \
+  --public-access-block-configuration \
+  "BlockPublicAcls=true,IgnorePublicAcls=true,BlockPublicPolicy=false,RestrictPublicBuckets=false"
+
+aws s3api put-bucket-policy \
+  --bucket cors-fun2-ab-36252 \
+  --policy file://bucket-policy.json
+
+aws s3api put-bucket-website \
+  --bucket cors-fun2-ab-36252 \
+  --website-configuration file://website.json
+
+aws s3 cp index.html s3://cors-fun2-ab-36252
+
+aws s3 cp hello.js s3://cors-fun2-ab-36252
+
+aws s3api put-bucket-cors \
+  --bucket cors-fun-ab-36252 \
+  --cors-configuration file://cors.json
+```
+
+#### Key Takeaways
+
+- AWS PrivateLink provides private access to Amazon S3 through Interface Endpoints and supports cross-account connectivity, fine-grained endpoint policies, and private communication without traversing the public internet.
+- VPC Gateway Endpoints provide private connectivity between a VPC and Amazon S3 without additional cost but do not support cross-account access or endpoint policies.
+- Cross-Origin Resource Sharing (CORS) controls which external websites are allowed to access resources stored in an Amazon S3 bucket.
+- Amazon S3 stores CORS rules as JSON or XML, although the AWS Management Console supports JSON configuration.
+- Allowing every origin (`*`) is generally discouraged because it weakens the protection that CORS is designed to provide.
+- Static website hosting can be combined with bucket policies and CORS configuration to securely serve web applications from Amazon S3.
+
+#### Repository Updates
+
+- Added examples demonstrating AWS PrivateLink and VPC Gateway Endpoint concepts.
+- Added Amazon S3 static website hosting examples.
+- Added bucket policy, website configuration, and CORS configuration examples.
+- Expanded the Amazon S3 documentation with networking and cross-origin security concepts.
+
+---
