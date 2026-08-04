@@ -365,3 +365,27 @@ aws s3 rb s3://class-fun-ab-6346
 - Amazon S3 supports CORS rules in JSON or XML format.
 - Static website hosting often requires a properly configured CORS policy when resources are loaded from different domains.
 - Using specific allowed origins is more secure than allowing all origins with the wildcard (`*`).
+
+## Session 15
+
+### Hands-on Practice
+
+- Studied how Amazon S3 protects data during transmission and while stored.
+- Compared encryption in transit with encryption at rest.
+- Learned the differences between Client-Side Encryption (CSE) and Server-Side Encryption (SSE).
+- Explored the four server-side encryption options available in Amazon S3:
+  - SSE-S3
+  - SSE-KMS
+  - SSE-C
+  - DSSE-KMS
+- Learned when each encryption method should be used and who manages the encryption keys.
+
+### New Concepts
+
+- Encryption in transit protects data using TLS while it moves across networks.
+- Encryption at rest protects data stored inside Amazon S3.
+- SSE-S3 is enabled by default and uses Amazon-managed AES-256 encryption keys.
+- SSE-KMS integrates with AWS Key Management Service, allowing customer-managed keys, key rotation, auditing, and fine-grained permissions.
+- SSE-C requires the client to provide the encryption key with every upload and download request because Amazon S3 does not retain the key.
+- DSSE-KMS applies two independent layers of encryption for workloads requiring stronger security controls.
+- Server-side encryption protects object contents but does not encrypt object metadata.

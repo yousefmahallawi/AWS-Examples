@@ -597,7 +597,7 @@ aws s3api put-bucket-policy \
 
   ---
 
-## 2026-07-31 | Session 12
+## 2026-07-31 | Session 15
 
 ### Amazon S3 — Network Privacy and Cross-Origin Resource Sharing (CORS)
 
@@ -681,3 +681,41 @@ aws s3api put-bucket-cors \
 - Expanded the Amazon S3 documentation with networking and cross-origin security concepts.
 
 ---
+## 2026-07-30 | Session 16
+
+### Amazon S3 — Encryption Overview
+
+#### Objectives
+
+- Understand how Amazon S3 protects data using encryption.
+- Compare encryption in transit with encryption at rest.
+- Learn the different server-side encryption options available in Amazon S3.
+
+#### Topics Covered
+
+- Encryption in Transit
+- TLS and SSL
+- Encryption at Rest
+- Server-Side Encryption (SSE)
+- SSE-S3
+- SSE-KMS
+- SSE-C
+- DSSE-KMS
+- Client-Side Encryption (CSE)
+
+#### Key Takeaways
+
+- Encryption in transit protects data while it travels across networks using TLS.
+- Encryption at rest protects stored data after it has been written to Amazon S3.
+- Server-Side Encryption is automatically enabled for all newly uploaded S3 objects.
+- SSE-S3 uses Amazon-managed encryption keys and is enabled by default.
+- SSE-KMS uses AWS KMS customer-managed keys, providing additional access control, auditing, and compliance capabilities.
+- SSE-C allows customers to provide their own encryption keys, which Amazon S3 never stores permanently.
+- DSSE-KMS provides dual-layer encryption for workloads requiring stronger security controls.
+- Server-side encryption encrypts object data but does not encrypt object metadata.
+
+#### Repository Updates
+
+- Added documentation covering Amazon S3 encryption concepts.
+- Expanded notes comparing the available encryption methods.
+- Documented security considerations for protecting data both in transit and at rest.
