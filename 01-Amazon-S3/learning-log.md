@@ -389,3 +389,28 @@ aws s3 rb s3://class-fun-ab-6346
 - SSE-C requires the client to provide the encryption key with every upload and download request because Amazon S3 does not retain the key.
 - DSSE-KMS applies two independent layers of encryption for workloads requiring stronger security controls.
 - Server-side encryption protects object contents but does not encrypt object metadata.
+
+
+---
+
+# Learning Log (Session 16)
+
+```md
+## Session 16
+
+### Hands-on Practice
+
+- Created an Amazon S3 bucket for encryption testing.
+- Uploaded an object using the default SSE-S3 encryption.
+- Uploaded an object using SSE-KMS with an AWS KMS key.
+- Attempted to upload an object using SSE-C and investigated the MD5 validation error.
+- Generated a customer encryption key using OpenSSL.
+- Successfully uploaded and downloaded an object using SSE-C and the AWS CLI.
+
+### New Concepts
+
+- SSE-S3 is enabled by default for all newly uploaded Amazon S3 objects.
+- SSE-KMS integrates Amazon S3 with AWS Key Management Service (AWS KMS) for customer-managed encryption keys.
+- SSE-C allows customers to provide their own encryption keys, which must be supplied with every request.
+- Amazon S3 validates customer-provided keys using an MD5 hash before accepting an SSE-C request.
+- Different server-side encryption methods provide different levels of key management and operational responsibility.

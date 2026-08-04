@@ -719,3 +719,48 @@ aws s3api put-bucket-cors \
 - Added documentation covering Amazon S3 encryption concepts.
 - Expanded notes comparing the available encryption methods.
 - Documented security considerations for protecting data both in transit and at rest.
+
+## 2026-07-30 | Session 17
+
+### Amazon S3 — Server-Side Encryption Hands-on
+
+#### Objectives
+
+- Practice uploading encrypted objects to Amazon S3.
+- Compare different server-side encryption methods.
+- Understand the requirements for SSE-S3, SSE-KMS, and SSE-C.
+
+#### Topics Covered
+
+- SSE-S3
+- SSE-KMS
+- SSE-C
+- Customer-managed encryption keys
+- KMS integration
+- Encryption key validation
+
+#### Commands Practiced
+
+```bash
+aws s3 mb s3://encryption-fun-ab-135
+
+echo "Hello World" > hello.txt
+
+aws s3 cp hello.txt s3://encryption-fun-ab-135
+
+aws s3api put-object \
+  --bucket encryption-fun-ab-135 \
+  --key hello.txt \
+  --body hello.txt \
+  --server-side-encryption aws:kms \
+  --ssekms-key-id <kms-key-id>
+
+openssl rand -out ssec.key 32
+
+aws s3 cp hello.txt s3://encryption-fun-ab-135/hello.txt \
+  --sse-c AES256 \
+  --sse-c-key fileb://ssec.key
+
+aws s3 cp s3://encryption-fun-ab-135/hello.txt hello.txt \
+  --sse-c AES256 \
+  --sse-c-key fileb://ssec.key
