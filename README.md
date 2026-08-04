@@ -1,3 +1,11 @@
+# AWS Examples
+
+Hands-on AWS examples, notes, and documentation created while preparing for the **AWS Certified Solutions Architect – Associate (SAA-C03)** certification.
+
+The goal of this repository is to document practical AWS experience, reinforce theoretical concepts, and build a portfolio of cloud projects using AWS services and Infrastructure as Code.
+
+---
+
 # Repository Structure
 
 ## 00 - Setup
@@ -5,10 +13,8 @@
 - AWS Account
 - IAM Administrator User
 - AWS CLI Configuration
-- AWS Budgets
-- Multi-Factor Authentication (MFA)
-
----
+- Budgets
+- MFA
 
 ## 01 - Amazon S3
 
@@ -16,25 +22,26 @@
 
 - S3 Buckets
 - Object Management
-- Bucket Configuration
-- Storage Classes
-- Object Lock
+- AWS CLI (`aws s3` & `aws s3api`)
+- AWS CloudShell
+- Bucket URIs
+- Object Keys
+- Prefixes
+- Metadata
+- Tags
 - Versioning
-- Encryption
+- Object Lock
+- Checksums & ETags
 
-### AWS CLI
-
-- High-Level Commands (`aws s3`)
-- Low-Level Commands (`aws s3api`)
-- JMESPath Queries
-- JSON, Table, and YAML Output
-
-### Automation
+### Linux & Automation
 
 - Bash Scripting
-- Reusable CLI Scripts
+- Script Permissions
+- Input Validation
+- JMESPath Queries
+- `jq`
 - Linux Utilities
-- JSON Processing with `jq`
+- S3 Automation Scripts
 
 ### Development
 
@@ -48,24 +55,43 @@
 - AWS CDK
 - Pulumi
 
-### Advanced Amazon S3
+### Storage Classes
 
-- ETags
-- Checksums (MD5, CRC32)
-- Object Prefixes
-- System Metadata
-- User Metadata
+- S3 Standard
+- Reduced Redundancy Storage (Legacy)
+- Standard-IA
+- One Zone-IA
+- Express One Zone
+- Intelligent-Tiering
+- Glacier Instant Retrieval
+- Glacier Flexible Retrieval
+- Glacier Deep Archive
+- Glacier Vault
 
----
+### Security
+
+- Block Public Access
+- Access Control Lists (ACLs)
+- Bucket Policies
+- IAM Policies vs Bucket Policies
+- Access Points
+- Access Grants
+- IAM Access Analyzer
+- PrivateLink
+- Gateway Endpoints
+- CORS
+- Encryption In Transit
+- Server-Side Encryption (SSE-S3)
+- Server-Side Encryption (SSE-KMS)
+- Server-Side Encryption with Customer Keys (SSE-C)
+- Dual-Layer Server-Side Encryption (DSSE-KMS)
 
 ## 02 - AWS API
 
 - AWS APIs
 - Authentication
-- AWS CLI vs SDK vs Console
+- CLI vs SDK vs Console
 - API Requests
-
----
 
 ## 03 - VPC
 
@@ -75,8 +101,6 @@
 - Internet Gateway
 - NAT Gateway
 
----
-
 ## 04 - IAM
 
 - Users
@@ -85,6 +109,36 @@
 - Policies
 - Permissions
 
+...
+
 ---
 
-*Additional sections will be added as I progress through the AWS Certified Solutions Architect – Associate (SAA-C03) course.*
+## Repository Contents
+
+Each service directory typically contains:
+
+- Hands-on examples
+- AWS CLI commands
+- Bash automation scripts
+- Infrastructure as Code examples
+- Documentation
+- Notes and observations
+- Practice exercises
+
+---
+
+## Progress
+
+This repository is continuously updated as I progress through the AWS Certified Solutions Architect – Associate (SAA-C03) course.
+
+Current focus:
+
+- Amazon S3 ✅ (In Progress)
+- AWS APIs ⏳
+- VPC ⏳
+- IAM ⏳
+- EC2 ⏳
+- Storage Services ⏳
+- Databases ⏳
+- Networking ⏳
+- Security ⏳
