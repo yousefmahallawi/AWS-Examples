@@ -18,20 +18,40 @@ The goal of this repository is to document practical AWS experience, reinforce t
 
 ## 01 - Amazon S3
 
-### Fundamentals
-
 - S3 Buckets
 - Object Management
-- AWS CLI (`aws s3` & `aws s3api`)
-- AWS CloudShell
-- Bucket URIs
-- Object Keys
-- Prefixes
+- AWS CLI (`aws s3` and `aws s3api`)
+- JMESPath Queries
+- Bash Automation
+- AWS SDK
+- CloudFormation
+- Terraform
+- AWS CDK
+- Pulumi
+- Checksums and Object Integrity
+- Object Prefixes
 - Metadata
-- Tags
-- Versioning
 - Object Lock
-- Checksums & ETags
+- S3 Bucket URIs
+- AWS CLI S3 Namespaces (`s3`, `s3api`, `s3control`, `s3outposts`)
+- Request Styles
+- DualStack Endpoints
+- Storage Classes
+- Glacier Storage Classes
+- Intelligent-Tiering
+- Block Public Access
+- Access Control Lists (ACLs)
+- Bucket Policies
+- IAM Policies vs Bucket Policies
+- Access Grants
+- IAM Access Analyzer for S3
+- Bucket Keys
+- Client-Side Encryption
+- Strong Consistency
+- Object Replication
+- Versioning
+- Lifecycle Rules
+- Transfer Acceleration
 
 ### Linux & Automation
 
@@ -130,15 +150,3 @@ Each service directory typically contains:
 ## Progress
 
 This repository is continuously updated as I progress through the AWS Certified Solutions Architect – Associate (SAA-C03) course.
-
-Current focus:
-
-- Amazon S3 ✅ (In Progress)
-- AWS APIs ⏳
-- VPC ⏳
-- IAM ⏳
-- EC2 ⏳
-- Storage Services ⏳
-- Databases ⏳
-- Networking ⏳
-- Security ⏳

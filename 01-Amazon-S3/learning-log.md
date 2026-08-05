@@ -414,3 +414,44 @@ aws s3 rb s3://class-fun-ab-6346
 - SSE-C allows customers to provide their own encryption keys, which must be supplied with every request.
 - Amazon S3 validates customer-provided keys using an MD5 hash before accepting an SSE-C request.
 - Different server-side encryption methods provide different levels of key management and operational responsibility.
+
+
+---
+
+# 7. Learning Log — Session 17
+
+```markdown
+## Session 17
+
+### Hands-on Practice
+
+- Learned how Amazon S3 Bucket Keys reduce AWS KMS request costs.
+- Configured bucket encryption using SSE-KMS.
+- Explored client-side encryption with the AWS SDK for Ruby.
+- Uploaded an encrypted object using the Ruby encryption client.
+- Downloaded the encrypted object using both the encryption client and the standard S3 client to compare the results.
+
+### New Concepts
+
+- S3 Bucket Keys reduce AWS KMS API requests by caching a temporary bucket-level key inside Amazon S3.
+- Bucket Keys can reduce AWS KMS costs by up to 99% for workloads using SSE-KMS.
+- Client-side encryption encrypts data before it leaves the application, ensuring only users with the encryption key can decrypt the object.
+- Reading an encrypted object without the encryption client returns ciphertext instead of the original plaintext.
+
+## Session 18
+
+### Hands-on Practice
+
+- Learned how Amazon S3 provides strong consistency for object operations.
+- Explored the different replication options available in Amazon S3.
+- Studied how versioning protects objects from accidental deletion and overwrites.
+- Learned how Lifecycle rules automate storage transitions and object expiration.
+- Explored how Transfer Acceleration improves upload performance using CloudFront edge locations.
+
+### New Concepts
+
+- Amazon S3 now provides strong consistency for all read, write, list, and delete operations.
+- Replication can occur within the same AWS Region or across multiple Regions for disaster recovery and data availability.
+- Versioning stores multiple versions of the same object and can only be suspended after being enabled.
+- Lifecycle rules automatically transition, archive, or delete objects based on configurable conditions.
+- Transfer Acceleration routes uploads through the AWS Global Backbone to reduce latency for users located far from the destination bucket.

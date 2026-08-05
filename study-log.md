@@ -764,3 +764,70 @@ aws s3 cp hello.txt s3://encryption-fun-ab-135/hello.txt \
 aws s3 cp s3://encryption-fun-ab-135/hello.txt hello.txt \
   --sse-c AES256 \
   --sse-c-key fileb://ssec.key
+
+## 2026-07-30 | Session 18
+
+### Amazon S3 — Encryption
+
+#### Objectives
+
+- Understand advanced Amazon S3 encryption options.
+- Learn how S3 Bucket Keys reduce AWS KMS costs.
+- Explore client-side encryption using the AWS SDK for Ruby.
+
+#### Topics Covered
+
+- SSE-KMS
+- S3 Bucket Keys
+- AWS KMS request optimization
+- Client-Side Encryption
+- AWS SDK for Ruby Encryption Client
+
+#### Commands Practiced
+
+```bash
+aws s3api put-bucket-encryption \
+  --bucket mybucket \
+  --server-side-encryption-configuration ...
+
+aws s3 mb s3://encrypt-client-fun-ab-634232
+
+bundle exec ruby encrypt.rb
+
+aws s3 rm s3://encrypt-client-fun-ab-634232/hello.txt
+aws s3 rb s3://encrypt-client-fun-ab-634232
+
+## 2026-07-30 | Session 19
+
+### Amazon S3 — Data Management
+
+#### Objectives
+
+- Understand how Amazon S3 maintains data consistency.
+- Learn object replication strategies for high availability and disaster recovery.
+- Explore versioning, lifecycle management, and transfer acceleration.
+
+#### Topics Covered
+
+- Strong consistency
+- Object replication
+- Cross-Region Replication (CRR)
+- Same-Region Replication (SRR)
+- Bi-Directional Replication
+- Batch Replication
+- S3 Versioning
+- Lifecycle Rules
+- Transfer Acceleration
+
+#### Key Takeaways
+
+- Amazon S3 provides strong consistency for all read, write, list, and delete operations.
+- Replication improves availability, disaster recovery, and data distribution across Regions or within the same Region.
+- Versioning protects against accidental object deletion and overwrites while integrating with Lifecycle rules.
+- Lifecycle policies automate storage transitions, archival, and object expiration to reduce storage costs.
+- Transfer Acceleration uses Amazon CloudFront edge locations and the AWS Global Backbone to speed up uploads from geographically distant users.
+
+#### Repository Updates
+
+- Added documentation covering S3 consistency, replication, versioning, lifecycle management, and transfer acceleration.
+- Added notes describing replication strategies and lifecycle rule actions.
