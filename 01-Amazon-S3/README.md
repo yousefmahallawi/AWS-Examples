@@ -52,6 +52,8 @@ This folder documents my hands-on practice while learning Amazon S3 for the AWS 
 - Multi-Region Access Points
 - Object Lambda Access Points
 - Mountpoint for Amazon S3
+- Archive Storage
+- Requester Pays
 ## Status
 
 🟡 In Progress

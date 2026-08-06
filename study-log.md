@@ -864,3 +864,46 @@ aws s3 presign
 mount-s3
 
 umount
+
+## 2026-07-31 | Session 21
+
+### Amazon S3 — Archive Storage and Requester Pays
+
+#### Objectives
+
+- Learn Amazon S3 archive storage options.
+- Understand the difference between archive storage classes and Intelligent-Tiering archive access tiers.
+- Explore the Requester Pays feature and its billing model.
+
+#### Topics Covered
+
+- Archive Storage Classes
+- Archive Access Tiers
+- Glacier Flexible Retrieval
+- Glacier Deep Archive
+- Intelligent-Tiering Archive Access
+- Intelligent-Tiering Deep Archive
+- Requester Pays
+- Requester Pays authentication
+- Requester Pays troubleshooting
+
+#### Commands Practiced
+
+```bash
+aws s3 cp s3://bucket-name/object local/path/object \
+  --request-payer requester
+```
+
+#### Key Takeaways
+
+- Archive Storage Classes require manually moving objects into archive storage.
+- Intelligent-Tiering Archive Access automatically moves objects based on usage patterns.
+- Glacier Flexible Retrieval provides retrieval in minutes to hours, while Glacier Deep Archive offers the lowest storage cost with much longer retrieval times.
+- Requester Pays transfers request and data transfer charges from the bucket owner to the requester.
+- Requesters must authenticate and include the Requester Pays parameter or header in every request.
+
+#### Repository Updates
+
+- Added documentation covering Amazon S3 archive storage.
+- Documented Requester Pays configuration and billing behavior.
+- Added troubleshooting notes and request examples.

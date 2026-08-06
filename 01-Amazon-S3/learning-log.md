@@ -484,3 +484,21 @@ aws s3 rb s3://class-fun-ab-6346
 - Multi-Region Access Points improve availability and latency across Regions.
 - Object Lambda transforms downloaded objects while leaving the originals unchanged.
 - Mountpoint provides high-throughput filesystem access to supported S3 storage classes.
+
+## Session 20
+
+### Hands-on Practice
+
+- Compared Amazon S3 archive storage classes.
+- Learned the differences between archive storage classes and Intelligent-Tiering archive access tiers.
+- Studied retrieval times for Glacier Flexible Retrieval and Glacier Deep Archive.
+- Learned how Requester Pays shifts request and download charges to the requester.
+- Practiced downloading objects using the `--request-payer requester` option.
+- Explored common Requester Pays authentication and permission errors.
+
+### New Concepts
+
+- Archive Storage Classes are intended for known access patterns and require manual transitions.
+- Intelligent-Tiering archive tiers automatically move objects based on access frequency.
+- Requester Pays allows organizations to share data without paying request and download charges.
+- Missing the Requester Pays header results in a 403 Forbidden response.
