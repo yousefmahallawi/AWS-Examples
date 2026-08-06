@@ -455,3 +455,32 @@ aws s3 rb s3://class-fun-ab-6346
 - Versioning stores multiple versions of the same object and can only be suspended after being enabled.
 - Lifecycle rules automatically transition, archive, or delete objects based on configurable conditions.
 - Transfer Acceleration routes uploads through the AWS Global Backbone to reduce latency for users located far from the destination bucket.
+
+---
+
+# 6) Learning Log
+
+## **Session 19**
+
+```md
+## Session 19
+
+### Hands-on Practice
+
+- Enabled Amazon S3 Transfer Acceleration.
+- Configured the AWS CLI to use virtual-hosted style requests.
+- Learned how to upload files through the Transfer Acceleration endpoint.
+- Generated temporary presigned URLs for private S3 objects.
+- Explored Amazon S3 Access Points and their policies.
+- Learned how Multi-Region Access Points route requests to the lowest-latency bucket.
+- Studied Amazon S3 Object Lambda for transforming object responses.
+- Learned how to mount an S3 bucket as a Linux filesystem using Mountpoint for Amazon S3.
+
+### New Concepts
+
+- Transfer Acceleration uses the AWS Global Network to improve upload performance.
+- Presigned URLs provide secure temporary access without making objects public.
+- Access Points simplify permission management for large shared datasets.
+- Multi-Region Access Points improve availability and latency across Regions.
+- Object Lambda transforms downloaded objects while leaving the originals unchanged.
+- Mountpoint provides high-throughput filesystem access to supported S3 storage classes.

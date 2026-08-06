@@ -831,3 +831,37 @@ aws s3 rb s3://encrypt-client-fun-ab-634232
 
 - Added documentation covering S3 consistency, replication, versioning, lifecycle management, and transfer acceleration.
 - Added notes describing replication strategies and lifecycle rule actions.
+
+## 2026-07-31 | Session 20
+
+### Amazon S3 — Advanced Access and Data Transfer
+
+#### Objectives
+
+- Learn advanced methods for transferring and accessing Amazon S3 data.
+- Explore features that simplify large-scale access management.
+- Understand services that improve performance and flexibility.
+
+#### Topics Covered
+
+- S3 Transfer Acceleration
+- Presigned URLs
+- S3 Access Points
+- Multi-Region Access Points
+- S3 Object Lambda
+- Mountpoint for Amazon S3
+
+#### Commands Practiced
+
+```bash
+aws s3api put-bucket-accelerate-configuration
+
+aws configure set s3.addressing_style virtual
+
+aws configure set default.s3.use_accelerate_endpoint true
+
+aws s3 presign
+
+mount-s3
+
+umount

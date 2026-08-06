@@ -27,6 +27,8 @@ This folder documents my hands-on practice while learning Amazon S3 for the AWS 
 - Block Public Access
 - Access Control Lists (ACLs)
 - Bucket Policies
+- IAM Policies vs Bucket Policies
+- Access Points
 - Access Grants
 - IAM Access Analyzer for S3
 - PrivateLink and Gateway Endpoints
@@ -44,6 +46,12 @@ This folder documents my hands-on practice while learning Amazon S3 for the AWS 
 - Versioning
 - Lifecycle Rules
 - Transfer Acceleration
+- S3 Transfer Acceleration
+- Presigned URLs
+- Access Points
+- Multi-Region Access Points
+- Object Lambda
+- Mountpoint for Amazon S3
 ## Status
 
 🟡 In Progress
