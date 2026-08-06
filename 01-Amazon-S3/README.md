@@ -46,11 +46,11 @@ This folder documents my hands-on practice while learning Amazon S3 for the AWS 
 - Versioning
 - Lifecycle Rules
 - Transfer Acceleration
-- S3 Transfer Acceleration
+- Transfer Acceleration
 - Presigned URLs
 - Access Points
 - Multi-Region Access Points
-- Object Lambda
+- Object Lambda Access Points
 - Mountpoint for Amazon S3
 ## Status
 
