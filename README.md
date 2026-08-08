@@ -52,6 +52,11 @@ The goal of this repository is to document practical AWS experience, reinforce t
 - Versioning
 - Lifecycle Rules
 - Transfer Acceleration
+- S3 Archive Storage Classes
+- S3 Intelligent-Tiering Archive Access Tiers
+- S3 Requester Pays
+- AWS Marketplace for S3
+- S3 Batch Operations
 
 ### Linux & Automation
 

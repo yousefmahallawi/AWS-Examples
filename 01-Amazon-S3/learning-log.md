@@ -502,3 +502,34 @@ aws s3 rb s3://class-fun-ab-6346
 - Intelligent-Tiering archive tiers automatically move objects based on access frequency.
 - Requester Pays allows organizations to share data without paying request and download charges.
 - Missing the Requester Pays header results in a 403 Forbidden response.
+## Session 21
+
+### Amazon S3 — Archive Storage, Requester Pays, and Batch Operations
+
+#### Hands-on Practice
+
+- Reviewed the difference between Archive Storage Classes and Intelligent-Tiering Archive Access Tiers.
+- Learned how S3 Requester Pays changes responsibility for certain S3 request and data-transfer costs.
+- Reviewed the permissions required to access a Requester Pays bucket.
+- Learned how the `x-amz-request-payer` header is used when making requests to Requester Pays buckets.
+- Explored the AWS Marketplace for S3 and third-party services that integrate with Amazon S3.
+- Learned how S3 Batch Operations can perform operations across billions of S3 objects.
+- Reviewed the different operation types supported by S3 Batch Operations.
+- Learned how manifests identify the objects that should be processed by a Batch Operations job.
+- Learned that S3 Inventory reports can be used to provide object lists for Batch Operations.
+- Learned that Batch Operations can generate completion reports to document the results of bulk operations.
+
+#### New Concepts
+
+- **Archive Storage Classes** are appropriate when access patterns are known and data can be manually transitioned to lower-cost archival storage.
+- **Archive Access Tiers** are useful when access patterns are unknown because S3 Intelligent-Tiering can automatically move objects between access tiers.
+- **Requester Pays** allows the requester to pay for certain request and data-transfer costs while the bucket owner continues to pay for storage.
+- Requests involving Requester Pays buckets must be authenticated and include the requester-pays parameter.
+- A missing requester-pays parameter can result in a `403 Forbidden` response.
+- The AWS account making the request is charged for the applicable requester-paid costs.
+- The AWS Marketplace for S3 provides third-party products and services that work with Amazon S3.
+- **S3 Batch Operations** is designed for large-scale operations involving billions of objects.
+- Batch Operations can copy objects, invoke Lambda functions, replace object tags, replace ACLs, restore archived objects, and manage Object Lock retention and legal holds.
+- A **manifest** provides Batch Operations with the list of objects that should be processed.
+- S3 Inventory reports and CSV files can be used to provide object lists for Batch Operations.
+- A **completion report** can be generated to audit the outcome of a Batch Operations job.

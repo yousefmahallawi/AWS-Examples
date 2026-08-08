@@ -54,6 +54,13 @@ This folder documents my hands-on practice while learning Amazon S3 for the AWS 
 - Mountpoint for Amazon S3
 - Archive Storage
 - Requester Pays
+- Archive Storage Classes
+- Intelligent-Tiering Archive Access Tiers
+- Requester Pays
+- AWS Marketplace for S3
+- S3 Batch Operations
+- Batch Operations Manifests
+- Batch Operations Completion Reports
 ## Status
 
 🟡 In Progress

@@ -907,3 +907,47 @@ aws s3 cp s3://bucket-name/object local/path/object \
 - Added documentation covering Amazon S3 archive storage.
 - Documented Requester Pays configuration and billing behavior.
 - Added troubleshooting notes and request examples.
+## 2026-07-31 | Session 22
+
+### Amazon S3 — Archive Storage, Requester Pays, and Batch Operations
+
+#### Objectives
+
+- Understand S3 archive storage options and access tiers.
+- Learn how Requester Pays changes S3 cost responsibility.
+- Understand how S3 Batch Operations performs large-scale object operations.
+
+#### Topics Covered
+
+- S3 Archive Storage Classes
+- S3 Intelligent-Tiering Archive Access Tiers
+- S3 Requester Pays
+- Requester Pays permissions
+- Requester Pays request headers
+- AWS Marketplace for S3
+- S3 Batch Operations
+- Batch Operations operation types
+- Batch Operations manifests
+- S3 Inventory reports
+- Batch Operations completion reports
+- Third-party services for Amazon S3
+
+#### Key Takeaways
+
+- Archive Storage Classes are useful when access patterns are known and data can be manually moved to lower-cost archival storage.
+- Intelligent-Tiering Archive Access Tiers automatically move objects to archival tiers based on their access patterns.
+- S3 Requester Pays allows the requester to pay for certain request and data-transfer costs instead of the bucket owner.
+- Requests to Requester Pays buckets must be authenticated and include the required requester-pays parameter.
+- S3 Batch Operations is designed to perform operations across very large numbers of S3 objects.
+- Batch Operations can copy objects, invoke Lambda functions, replace object tags, replace ACLs, restore archived objects, and manage Object Lock retention and legal holds.
+- Batch Operations uses a manifest to identify the objects that should be processed.
+- S3 Inventory reports can be used as manifests for Batch Operations.
+- Completion reports provide information about the results of a Batch Operations job.
+
+#### Repository Updates
+
+- Expanded Amazon S3 documentation with archive storage concepts.
+- Added documentation for S3 Requester Pays.
+- Added notes about AWS Marketplace integrations with S3.
+- Documented S3 Batch Operations and supported operation types.
+- Documented Batch Operations manifests and completion reports.
