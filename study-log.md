@@ -951,3 +951,51 @@ aws s3 cp s3://bucket-name/object local/path/object \
 - Added notes about AWS Marketplace integrations with S3.
 - Documented S3 Batch Operations and supported operation types.
 - Documented Batch Operations manifests and completion reports.
+
+---
+
+## 2026-08-08 | Session 23
+
+### Amazon S3 — Inventory, Select, Events, and Storage Analytics
+
+#### Objectives
+
+- Learn how Amazon S3 provides inventory and analytics capabilities for managing objects at scale.
+- Understand how S3 Select can retrieve specific data from supported objects.
+- Learn how S3 Event Notifications integrate S3 with other AWS services.
+- Understand how Storage Class Analysis and S3 Storage Lens help optimize storage and monitor S3 usage.
+
+#### Topics Covered
+
+- Amazon S3 Inventory
+- Inventory schedules and reports
+- Inventory metadata
+- CSV, ORC, and Parquet inventory formats
+- Amazon S3 Select
+- SQL queries on S3 objects
+- S3 Event Notifications
+- SNS, SQS, Lambda, and EventBridge integrations
+- At-least-once event delivery
+- S3 Storage Class Analysis
+- Storage access patterns
+- S3 Standard to S3 Standard-IA analysis
+- Amazon S3 Storage Lens
+- Organization-wide storage visibility
+- Storage optimization and data protection insights
+
+#### Commands Practiced
+
+```bash
+aws s3api select-object-content \
+  --bucket my-bucket \
+  --key my-data-file.csv \
+  --expression "select * from s3object limit 100" \
+  --expression-type 'SQL' \
+  --input-serialization '{"CSV": {}, "CompressionType": "NONE"}' \
+  --output-serialization '{"CSV": {}}' \
+  output.csv
+
+aws s3api put-bucket-analytics-configuration \
+  --bucket my-bucket \
+  --id 1 \
+  --analytics-configuration '{"Id":"1","StorageClassAnalysis":{}}'

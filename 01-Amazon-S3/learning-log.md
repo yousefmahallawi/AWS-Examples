@@ -533,3 +533,30 @@ aws s3 rb s3://class-fun-ab-6346
 - A **manifest** provides Batch Operations with the list of objects that should be processed.
 - S3 Inventory reports and CSV files can be used to provide object lists for Batch Operations.
 - A **completion report** can be generated to audit the outcome of a Batch Operations job.
+---
+
+## Session 22
+
+### Amazon S3 — Inventory, Select, Events, and Storage Analytics
+
+#### Hands-on Practice
+
+- Learned how Amazon S3 Inventory creates scheduled reports containing objects and their metadata.
+- Learned how S3 Inventory reports can be generated daily or weekly and stored in another S3 bucket.
+- Explored the metadata that can be included in S3 Inventory reports, including object size, last modified date, storage class, encryption status, replication status, ETag, checksums, and Object Lock information.
+- Learned how Amazon S3 Select uses SQL expressions to filter and retrieve specific data from objects instead of retrieving the entire object.
+- Practiced using `select-object-content` with CSV data.
+- Learned how S3 Event Notifications can notify other AWS services when events occur in an S3 bucket.
+- Explored S3 Storage Class Analysis and how it can help identify objects that may be suitable for moving from S3 Standard to S3 Standard-IA.
+- Learned how Amazon S3 Storage Lens provides storage visibility and analytics across an AWS organization.
+
+#### New Concepts
+
+- S3 Inventory provides scheduled object and metadata reports that can be used for auditing, compliance, and storage management.
+- S3 Inventory supports CSV, ORC, and Parquet output formats.
+- S3 Select uses SQL to retrieve only the required data from supported objects, reducing the amount of data that needs to be retrieved.
+- S3 Event Notifications can send notifications to Amazon SNS, Amazon SQS, AWS Lambda, and Amazon EventBridge.
+- S3 event notifications are designed for at-least-once delivery.
+- Storage Class Analysis observes access patterns to help determine when objects may be appropriate for transition from S3 Standard to S3 Standard-IA.
+- Storage Class Analysis can use prefixes and object tags as filters and can export analysis data to an S3 bucket.
+- S3 Storage Lens provides organization-wide visibility into storage usage and activity and can help identify cost-optimization and data-protection opportunities.

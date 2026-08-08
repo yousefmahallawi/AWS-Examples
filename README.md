@@ -57,6 +57,11 @@ The goal of this repository is to document practical AWS experience, reinforce t
 - S3 Requester Pays
 - AWS Marketplace for S3
 - S3 Batch Operations
+- S3 Inventory
+- S3 Select
+- S3 Event Notifications
+- S3 Storage Class Analysis
+- S3 Storage Lens
 
 ### Linux & Automation
 
